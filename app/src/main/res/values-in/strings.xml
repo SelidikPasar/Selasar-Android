@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Selidik Pasar</string>
+    <string name="register">Daftar</string>
+    <string name="name">Nama</string>
+    <string name="password">Kata Sandi</string>
+    <string name="email">Email</string>
+    <string name="email_validation">Masukan alamat email yang valid!</string>
+    <string name="password_length">Password tidak boleh kurang dari 6 karakter!</string>
+    <string name="login">Masuk</string>
 </resources>
