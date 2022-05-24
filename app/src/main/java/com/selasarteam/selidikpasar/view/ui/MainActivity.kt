@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
         setupView()
         setupViewModel()
+        checkUserStatus()
+        setupList()
     }
 
     private fun setupView() {
@@ -27,5 +29,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
+    }
+
+    private fun checkUserStatus() {
+
+    }
+
+    private fun setupList() {
+
     }
 }
