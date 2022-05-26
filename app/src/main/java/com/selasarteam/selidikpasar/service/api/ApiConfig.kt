@@ -17,13 +17,13 @@ object ApiConfig {
             .addInterceptor(loggingInterceptor)
             .addInterceptor { chain ->
                 chain.request().newBuilder()
-                    .addHeader("Authorization", "token ${BuildConfig.API_KEY}")
+                    .addHeader("Authorization", BuildConfig.API_KEY)
                     .build()
                     .let(chain::proceed)
             }
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl(BuildConfig.API_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
