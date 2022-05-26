@@ -7,4 +7,9 @@
         <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="TextStyle.SUBTITLE">
+        <item name="fontFamily">@font/sarabun_light</item>
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>
