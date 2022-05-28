@@ -6,6 +6,8 @@
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/drawable/bg_edt_default.xml" value="0.1" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/drawable/bg_edt_error.xml" value="0.1" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/drawable/ic_broken_image.xml" value="0.1" />
+        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/drawable/ic_circle_blank.xml" value="0.1" />
+        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/drawable/ic_circle_full.xml" value="0.1" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_login.xml" value="0.1984375" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_marketplace.xml" value="0.18541666666666667" />
@@ -13,7 +15,7 @@
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/fragment_marketplace.xml" value="0.18541666666666667" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/fragment_news.xml" value="0.19947916666666668" />
-        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/fragment_price.xml" value="0.18541666666666667" />
+        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/fragment_price.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/fragment_profile.xml" value="0.19947916666666668" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_news.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
