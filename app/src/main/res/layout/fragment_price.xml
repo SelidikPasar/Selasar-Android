@@ -6,5 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.PriceFragment">
 
+    <ImageView
+        android:id="@+id/iv_highlight_1"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/iv_highlight_2"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/iv_highlight_3"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <ImageView
+        android:id="@+id/iv_highlight_4"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="120dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@id/ic_highlight_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_highlight_1"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@+id/ic_highlight_3"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_1"
+        app:layout_constraintTop_toTopOf="@id/ic_highlight_1"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@id/ic_highlight_4"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_2"
+        app:layout_constraintTop_toTopOf="@+id/ic_highlight_2"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="120dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_3"
+        app:layout_constraintTop_toTopOf="@id/ic_highlight_3"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
