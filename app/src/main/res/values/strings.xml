@@ -15,4 +15,5 @@
     <string name="profile">Profile</string>
     <string name="marketplace">Marketplace</string>
     <string name="price">Price</string>
+    <string name="highlight">Highlight</string>
 </resources>
