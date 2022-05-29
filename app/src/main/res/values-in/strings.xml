@@ -15,4 +15,16 @@
     <string name="marketplace">Pasar</string>
     <string name="price">Harga</string>
     <string name="highlight">Sorotan</string>
+    <string name="rice">Beras</string>
+    <string name="more">Lainnya</string>
+    <string name="red_chilli">Cabai Merah</string>
+    <string name="garlic">Bawang Putih</string>
+    <string name="shallot">Bawang Merah</string>
+    <string name="egg">Telur</string>
+    <string name="beef">Daging Sapi</string>
+    <string name="chicken">Daging Ayam</string>
+    <string name="avatar">Avatar Pengguna</string>
+    <string name="logout">Keluar</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="change_password">Ganti Password</string>
 </resources>

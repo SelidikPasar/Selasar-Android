@@ -11,9 +11,21 @@
     <string name="published_date">Jan 31, 2022</string>
     <string name="photo">Photo</string>
     <string name="news">News</string>
-    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="profile">Profile</string>
     <string name="marketplace">Marketplace</string>
     <string name="price">Price</string>
     <string name="highlight">Highlight</string>
+    <string name="rice">Rice</string>
+    <string name="chicken">Chicken</string>
+    <string name="beef">Beef</string>
+    <string name="egg">Egg</string>
+    <string name="shallot">Shallot</string>
+    <string name="garlic">Garlic</string>
+    <string name="red_chilli">Red Chilli Pepper</string>
+    <string name="more">More</string>
+    <string name="header" translatable="false">SELASAR</string>
+    <string name="avatar">User Avatar</string>
+    <string name="logout">Logout</string>
+    <string name="change_language">Change Language</string>
+    <string name="change_password">Change Password</string>
 </resources>
