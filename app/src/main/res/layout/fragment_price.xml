@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <ImageView
         android:id="@+id/iv_highlight_2"
@@ -103,9 +103,19 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="70dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ic_highlight_1" />
+
+    <TextView
+        android:id="@+id/tv_rice"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/rice"
+        app:layout_constraintEnd_toEndOf="@id/ib_rice"
+        app:layout_constraintStart_toStartOf="@id/ib_rice"
+        app:layout_constraintTop_toBottomOf="@id/ib_rice" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_chicken"
@@ -115,6 +125,16 @@
         app:layout_constraintStart_toEndOf="@id/ib_rice"
         app:layout_constraintTop_toTopOf="@id/ib_rice" />
 
+    <TextView
+        android:id="@+id/tv_chicken"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chicken"
+        app:layout_constraintEnd_toEndOf="@id/ib_chicken"
+        app:layout_constraintStart_toStartOf="@id/ib_chicken"
+        app:layout_constraintTop_toBottomOf="@id/ib_chicken" />
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_beef"
         android:layout_width="70dp"
@@ -122,6 +142,16 @@
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toEndOf="@id/ib_chicken"
         app:layout_constraintTop_toTopOf="@id/ib_chicken" />
+
+    <TextView
+        android:id="@+id/tv_beef"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/beef"
+        app:layout_constraintEnd_toEndOf="@id/ib_beef"
+        app:layout_constraintStart_toStartOf="@id/ib_beef"
+        app:layout_constraintTop_toBottomOf="@id/ib_beef" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_egg"
@@ -132,13 +162,33 @@
         app:layout_constraintStart_toEndOf="@id/ib_beef"
         app:layout_constraintTop_toTopOf="@id/ib_beef" />
 
+    <TextView
+        android:id="@+id/tv_egg"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/egg"
+        app:layout_constraintEnd_toEndOf="@id/ib_egg"
+        app:layout_constraintStart_toStartOf="@id/ib_egg"
+        app:layout_constraintTop_toBottomOf="@id/ib_egg" />
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_shallot"
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@id/ib_rice"
-        app:layout_constraintTop_toBottomOf="@id/ib_rice" />
+        app:layout_constraintTop_toBottomOf="@id/tv_rice" />
+
+    <TextView
+        android:id="@+id/tv_shallot"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shallot"
+        app:layout_constraintEnd_toEndOf="@id/ib_shallot"
+        app:layout_constraintStart_toStartOf="@id/ib_shallot"
+        app:layout_constraintTop_toBottomOf="@id/ib_shallot" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_garlic"
@@ -147,6 +197,16 @@
         app:layout_constraintStart_toStartOf="@id/ib_chicken"
         app:layout_constraintTop_toTopOf="@id/ib_shallot" />
 
+    <TextView
+        android:id="@+id/tv_garlic"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/garlic"
+        app:layout_constraintEnd_toEndOf="@id/ib_garlic"
+        app:layout_constraintStart_toStartOf="@id/ib_garlic"
+        app:layout_constraintTop_toBottomOf="@id/ib_garlic" />
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_red_chilli"
         android:layout_width="70dp"
@@ -154,12 +214,41 @@
         app:layout_constraintStart_toStartOf="@id/ib_beef"
         app:layout_constraintTop_toTopOf="@id/ib_garlic" />
 
+    <TextView
+        android:id="@+id/tv_red_chilli"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/red_chilli"
+        app:layout_constraintEnd_toEndOf="@id/ib_red_chilli"
+        app:layout_constraintStart_toStartOf="@id/ib_red_chilli"
+        app:layout_constraintTop_toBottomOf="@id/ib_red_chilli" />
+
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_more"
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="@id/ib_egg"
         app:layout_constraintTop_toTopOf="@id/ib_red_chilli" />
+
+    <TextView
+        android:id="@+id/tv_more"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        app:layout_constraintEnd_toEndOf="@id/ib_more"
+        app:layout_constraintStart_toStartOf="@id/ib_more"
+        app:layout_constraintTop_toBottomOf="@id/ib_more" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_percent="0.9"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
