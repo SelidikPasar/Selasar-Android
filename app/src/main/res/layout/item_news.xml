@@ -43,11 +43,11 @@
             android:layout_marginVertical="8dp"
             android:layout_marginEnd="8dp"
             android:ellipsize="end"
-            android:maxLines="5"
+            android:maxLines="4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_title_item"
             app:layout_constraintTop_toBottomOf="@id/tv_title_item"
-            tools:text="@string/news" />
+            tools:text="@tools:sample/lorem/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
