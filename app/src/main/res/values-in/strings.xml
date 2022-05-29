@@ -27,4 +27,7 @@
     <string name="logout">Keluar</string>
     <string name="change_language">Ganti Bahasa</string>
     <string name="change_password">Ganti Password</string>
+    <string name="validation_terms">Dengan mencentang kotak ini, berarti Anda setuju dengan syarat dan ketentuan kami</string>
+    <string name="not_registered">Anda belum terdaftar?</string>
+    <string name="register_here">Daftar disini!</string>
 </resources>

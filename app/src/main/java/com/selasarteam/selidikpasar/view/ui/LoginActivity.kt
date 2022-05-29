@@ -11,7 +11,7 @@ class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private lateinit var factory: ViewModelFactory
-    private val loginViewModel: LoginViewModel by viewModels { factory }
+    private val viewModel: LoginViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

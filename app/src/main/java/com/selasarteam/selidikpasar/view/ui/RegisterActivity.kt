@@ -14,7 +14,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
     private lateinit var factory: ViewModelFactory
-    private val registerViewModel: RegisterViewModel by viewModels { factory }
+    private val viewModel: RegisterViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
