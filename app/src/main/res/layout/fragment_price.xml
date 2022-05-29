@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/iv_highlight_1"
-        android:layout_width="320dp"
-        android:layout_height="220dp"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
         android:contentDescription="@string/highlight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,8 +55,8 @@
         android:id="@+id/ic_highlight_1"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="120dp"
+        android:layout_marginTop="24dp"
         app:altSrc="@drawable/ic_circle_full"
         app:layout_constraintEnd_toStartOf="@id/ic_highlight_2"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,6 +97,69 @@
         app:layout_constraintTop_toTopOf="@id/ic_highlight_3"
         app:srcCompat="@drawable/ic_circle_blank"
         app:tint="@color/md_theme_dark_primary" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_rice"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_highlight_1" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_chicken"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/ib_rice"
+        app:layout_constraintTop_toTopOf="@id/ib_rice" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_beef"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toEndOf="@id/ib_chicken"
+        app:layout_constraintTop_toTopOf="@id/ib_chicken" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_egg"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ib_beef"
+        app:layout_constraintTop_toTopOf="@id/ib_beef" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_shallot"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="@id/ib_rice"
+        app:layout_constraintTop_toBottomOf="@id/ib_rice" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_garlic"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="@id/ib_chicken"
+        app:layout_constraintTop_toTopOf="@id/ib_shallot" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_red_chilli"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="@id/ib_beef"
+        app:layout_constraintTop_toTopOf="@id/ib_garlic" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_more"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintStart_toStartOf="@id/ib_egg"
+        app:layout_constraintTop_toTopOf="@id/ib_red_chilli" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
