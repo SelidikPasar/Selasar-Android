@@ -11,10 +11,10 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:contentDescription="@string/avatar"
-        android:src="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/gl_horizontal" />
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal"
+        tools:src="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tv_name"
