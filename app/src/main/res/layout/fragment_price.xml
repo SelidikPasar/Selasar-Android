@@ -53,9 +53,9 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="120dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="150dp"
         android:layout_marginTop="24dp"
         app:altSrc="@drawable/ic_circle_full"
         app:layout_constraintEnd_toStartOf="@id/ic_highlight_2"
@@ -66,8 +66,8 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:altSrc="@drawable/ic_circle_full"
         app:layout_constraintEnd_toStartOf="@+id/ic_highlight_3"
         app:layout_constraintStart_toEndOf="@id/ic_highlight_1"
@@ -77,8 +77,8 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         app:altSrc="@drawable/ic_circle_full"
         app:layout_constraintEnd_toStartOf="@id/ic_highlight_4"
         app:layout_constraintStart_toEndOf="@id/ic_highlight_2"
@@ -88,9 +88,9 @@
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="120dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="150dp"
         app:altSrc="@drawable/ic_circle_full"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ic_highlight_3"
