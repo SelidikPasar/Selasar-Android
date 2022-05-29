@@ -28,4 +28,7 @@
     <string name="logout">Logout</string>
     <string name="change_language">Change Language</string>
     <string name="change_password">Change Password</string>
+    <string name="validation_terms">By checking this box, it\'s mean that you are agree with our terms and conditions</string>
+    <string name="not_registered">Not registered yet?</string>
+    <string name="register_here">Register here!</string>
 </resources>
