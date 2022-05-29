@@ -15,7 +15,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_market="0.0"
         tools:listitem="@layout/item_market" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
