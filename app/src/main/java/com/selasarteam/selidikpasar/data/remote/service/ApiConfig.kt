@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.service.api
+package com.selasarteam.selidikpasar.data.remote.service
 
 import com.selasarteam.selidikpasar.BuildConfig
 import okhttp3.OkHttpClient
@@ -15,12 +15,12 @@ object ApiConfig {
         }
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            .addInterceptor { chain ->
-                chain.request().newBuilder()
-                    .addHeader("Authorization", BuildConfig.API_KEY)
-                    .build()
-                    .let(chain::proceed)
-            }
+//            .addInterceptor { chain ->
+//                chain.request().newBuilder()
+//                    .addHeader("apiKey", BuildConfig.API_KEY)
+//                    .build()
+//                    .let(chain::proceed)
+//            }
             .build()
         val retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)

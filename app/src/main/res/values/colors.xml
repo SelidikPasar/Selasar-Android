@@ -55,4 +55,5 @@
     <color name="md_theme_dark_inversePrimary">#9C404F</color>
     <color name="md_theme_dark_shadow">#000000</color>
     <color name="md_theme_dark_primaryInverse">#9C404F</color>
+    <color name="placeholder">#6FB6B6B6</color>
 </resources>

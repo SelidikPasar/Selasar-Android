@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.model
+package com.selasarteam.selidikpasar.data.local.datastore
 
 data class SessionModel(
     val name: String,

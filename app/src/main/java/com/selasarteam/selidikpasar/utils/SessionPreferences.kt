@@ -5,7 +5,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.selasarteam.selidikpasar.model.SessionModel
+import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 

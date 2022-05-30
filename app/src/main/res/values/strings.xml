@@ -31,4 +31,5 @@
     <string name="validation_terms">By checking this box, it\'s mean that you are agree with our terms and conditions</string>
     <string name="not_registered">Not registered yet?</string>
     <string name="register_here">Register here!</string>
+    <string name="error_response">"Something wrong, "</string>
 </resources>

@@ -30,4 +30,5 @@
     <string name="validation_terms">Dengan mencentang kotak ini, berarti Anda setuju dengan syarat dan ketentuan kami</string>
     <string name="not_registered">Anda belum terdaftar?</string>
     <string name="register_here">Daftar disini!</string>
+    <string name="error_response">"Terjadi kesalahan, "</string>
 </resources>

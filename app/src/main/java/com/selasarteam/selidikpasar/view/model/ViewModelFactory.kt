@@ -3,7 +3,7 @@ package com.selasarteam.selidikpasar.view.model
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.selasarteam.selidikpasar.model.MainRepository
+import com.selasarteam.selidikpasar.data.MainRepository
 import com.selasarteam.selidikpasar.utils.Injection
 
 class ViewModelFactory(private val repo: MainRepository) : ViewModelProvider.NewInstanceFactory() {
