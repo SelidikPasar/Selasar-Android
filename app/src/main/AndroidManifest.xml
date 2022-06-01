@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".view.ui.DetailsNewsActivity"
+            android:name=".view.ui.DetailNewsActivity"
             android:exported="false" />
         <activity
             android:name=".view.ui.RegisterActivity"
