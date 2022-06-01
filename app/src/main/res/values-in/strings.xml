@@ -33,4 +33,8 @@
     <string name="error_response">"Terjadi kesalahan, "</string>
     <string name="title_detail">Detail Berita</string>
     <string name="read_more">Baca Selengkapnya</string>
+    <string name="not_login">Belum Masuk</string>
+    <string name="register_first">Anda tidak dapat mengakses fitur ini karena belum mendaftarkan akun. Silakan daftar terlebih dahulu!</string>
+    <string name="already_have_an_account">Sudah memiliki akun?</string>
+    <string name="login_here">Masuk disini!</string>
 </resources>
