@@ -1,12 +1,10 @@
 package com.selasarteam.selidikpasar.view.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
-import com.selasarteam.selidikpasar.databinding.ActivityLoginBinding
-import com.selasarteam.selidikpasar.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.selasarteam.selidikpasar.databinding.ActivityRegisterBinding
-import com.selasarteam.selidikpasar.view.model.LoginViewModel
 import com.selasarteam.selidikpasar.view.model.RegisterViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
 
@@ -21,6 +19,21 @@ class RegisterActivity : AppCompatActivity() {
 
         setupView()
         setupViewModel()
+        setupAction()
+    }
+
+    private fun setupAction() {
+        binding.apply {
+            btnLoginHere.setOnClickListener {
+                startActivity(
+                    Intent(
+                        this@RegisterActivity,
+                        LoginActivity::class.java
+                    )
+                )
+                finish()
+            }
+        }
     }
 
     private fun setupView() {

@@ -1,5 +1,6 @@
 package com.selasarteam.selidikpasar.view.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -18,6 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
         setupView()
         setupViewModel()
+        setupAction()
     }
 
     private fun setupView() {
@@ -27,5 +29,19 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
+    }
+
+    private fun setupAction() {
+        binding.apply {
+            btnRegisterHere.setOnClickListener {
+                startActivity(
+                    Intent(
+                        this@LoginActivity,
+                        RegisterActivity::class.java
+                    )
+                )
+                finish()
+            }
+        }
     }
 }
