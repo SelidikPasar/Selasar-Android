@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/price_fragment"
     tools:context=".view.ui.PriceFragment">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/iv_highlight_1"
@@ -27,7 +32,7 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <ImageView
         android:id="@+id/iv_highlight_3"
@@ -38,7 +43,7 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <ImageView
         android:id="@+id/iv_highlight_4"
@@ -49,7 +54,7 @@
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        tools:src="@drawable/ic_launcher_background" />
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_1"
@@ -105,7 +110,8 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="70dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ic_highlight_1" />
+        app:layout_constraintTop_toBottomOf="@id/ic_highlight_1"
+        android:background="@drawable/slsr_icon_rice"/>
 
     <TextView
         android:id="@+id/tv_rice"
@@ -123,7 +129,8 @@
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toEndOf="@id/ib_rice"
-        app:layout_constraintTop_toTopOf="@id/ib_rice" />
+        app:layout_constraintTop_toTopOf="@id/ib_rice"
+        android:background="@drawable/slsr_icon_chicken"/>
 
     <TextView
         android:id="@+id/tv_chicken"
@@ -141,7 +148,8 @@
         android:layout_height="70dp"
         android:layout_marginStart="24dp"
         app:layout_constraintStart_toEndOf="@id/ib_chicken"
-        app:layout_constraintTop_toTopOf="@id/ib_chicken" />
+        app:layout_constraintTop_toTopOf="@id/ib_chicken"
+        android:background="@drawable/slsr_icon_beef"/>
 
     <TextView
         android:id="@+id/tv_beef"
@@ -160,7 +168,8 @@
         android:layout_marginHorizontal="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ib_beef"
-        app:layout_constraintTop_toTopOf="@id/ib_beef" />
+        app:layout_constraintTop_toTopOf="@id/ib_beef"
+        android:background="@drawable/slsr_icon_eggs"/>
 
     <TextView
         android:id="@+id/tv_egg"
@@ -178,7 +187,8 @@
         android:layout_height="70dp"
         android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="@id/ib_rice"
-        app:layout_constraintTop_toBottomOf="@id/tv_rice" />
+        app:layout_constraintTop_toBottomOf="@id/tv_rice"
+        android:background="@drawable/slsr_icon_shallot"/>
 
     <TextView
         android:id="@+id/tv_shallot"
@@ -195,7 +205,8 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="@id/ib_chicken"
-        app:layout_constraintTop_toTopOf="@id/ib_shallot" />
+        app:layout_constraintTop_toTopOf="@id/ib_shallot"
+        android:background="@drawable/slsr_icon_garlic"/>
 
     <TextView
         android:id="@+id/tv_garlic"
@@ -212,7 +223,8 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         app:layout_constraintStart_toStartOf="@id/ib_beef"
-        app:layout_constraintTop_toTopOf="@id/ib_garlic" />
+        app:layout_constraintTop_toTopOf="@id/ib_garlic"
+        android:background="@drawable/slsr_icon_chili"/>
 
     <TextView
         android:id="@+id/tv_red_chilli"
@@ -228,6 +240,8 @@
         android:id="@+id/ib_more"
         android:layout_width="70dp"
         android:layout_height="70dp"
+
+        android:background="@drawable/slsr_icon_more"
         app:layout_constraintStart_toStartOf="@id/ib_egg"
         app:layout_constraintTop_toTopOf="@id/ib_red_chilli" />
 
@@ -241,14 +255,16 @@
         app:layout_constraintStart_toStartOf="@id/ib_more"
         app:layout_constraintTop_toBottomOf="@id/ib_more" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_horizontal"
+    <TextView
+        style="@style/TextStyle.DESC"
         android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.9"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_highlight_1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
