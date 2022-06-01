@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.selasarteam.selidikpasar.R
+import com.selasarteam.selidikpasar.view.adapter.MyItemRecyclerViewAdapter
 import com.selasarteam.selidikpasar.view.ui.placeholder.PlaceholderContent
 
 /**

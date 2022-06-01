@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.view.ui
+package com.selasarteam.selidikpasar.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
