@@ -27,6 +27,7 @@
     <color name="md_theme_light_inversePrimary">#FFB2BB</color>
     <color name="md_theme_light_shadow">#000000</color>
     <color name="md_theme_light_primaryInverse">#FFB2BB</color>
+    <color name="md_theme_light_statusBarColor">#FDECE8</color>
     <color name="md_theme_dark_primary">#FFB2BB</color>
     <color name="md_theme_dark_onPrimary">#5F1223</color>
     <color name="md_theme_dark_primaryContainer">#7D2938</color>
@@ -55,5 +56,6 @@
     <color name="md_theme_dark_inversePrimary">#9C404F</color>
     <color name="md_theme_dark_shadow">#000000</color>
     <color name="md_theme_dark_primaryInverse">#9C404F</color>
-    <color name="placeholder">#6FB6B6B6</color>
+    <color name="md_theme_dark_statusBarColor">#202A30</color>
+    <color name="md_theme_placeholder">#6FB6B6B6</color>
 </resources>
