@@ -16,8 +16,8 @@ import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.databinding.ItemNewsBinding
 import com.selasarteam.selidikpasar.utils.DateFormatter
 import com.selasarteam.selidikpasar.view.adapter.ListNewsAdapter.ListViewHolder
-import com.selasarteam.selidikpasar.view.ui.DetailsNewsActivity
-import com.selasarteam.selidikpasar.view.ui.DetailsNewsActivity.Companion.EXTRA_DATA
+import com.selasarteam.selidikpasar.view.ui.DetailNewsActivity
+import com.selasarteam.selidikpasar.view.ui.DetailNewsActivity.Companion.EXTRA_DATA
 
 class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -48,7 +48,7 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
                     .into(ivPhoto)
 
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailsNewsActivity::class.java)
+                    val intent = Intent(itemView.context, DetailNewsActivity::class.java)
                     intent.putExtra(EXTRA_DATA, news)
 
                     val optionsCompat: ActivityOptionsCompat =
