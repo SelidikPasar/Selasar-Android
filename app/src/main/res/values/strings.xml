@@ -38,4 +38,6 @@
     <string name="register_first">You cannot access this feature because you haven\'t registered an account. Please register first!</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="login_here">Login here!</string>
+    <string name="change_pw">Change Password</string>
+    <string name="confirm_password">Confirm Password</string>
 </resources>
