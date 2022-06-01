@@ -22,6 +22,9 @@ class ViewModelFactory(private val repo: MainRepository) : ViewModelProvider.New
             modelClass.isAssignableFrom(NewsViewModel::class.java) -> {
                 NewsViewModel(repo) as T
             }
+            modelClass.isAssignableFrom(ProfileViewModel::class.java) -> {
+                ProfileViewModel(repo) as T
+            }
             else -> throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
         }
     }
