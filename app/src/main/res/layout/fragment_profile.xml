@@ -75,7 +75,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,10 +87,36 @@
         android:contentDescription="@string/not_login"
         android:src="@drawable/ic_broken_image"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/tv_not_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/gl_horizontal" />
+
+    <TextView
+        android:id="@+id/tv_not_login"
+        style="@style/TextStyle.REGISTER"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="12dp"
+        android:text="@string/register_first"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/btn_register_here"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_not_login" />
+
+    <Button
+        android:id="@id/btn_register_here"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="@string/register_here"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/tv_not_login" />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal"
