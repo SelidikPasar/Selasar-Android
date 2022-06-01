@@ -70,6 +70,27 @@
         app:layout_constraintStart_toStartOf="@id/btn_change_lang"
         app:layout_constraintTop_toBottomOf="@id/btn_change_lang" />
 
+    <View
+        android:id="@+id/whitespace"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_not_login"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/not_login"
+        android:src="@drawable/ic_broken_image"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/gl_horizontal2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal"
         android:layout_width="wrap_content"
