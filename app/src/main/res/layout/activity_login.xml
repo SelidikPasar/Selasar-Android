@@ -70,7 +70,7 @@
     <Button
         android:id="@+id/btn_login"
         android:layout_width="0dp"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
         android:layout_marginTop="32dp"
         android:text="@string/login"
@@ -83,7 +83,7 @@
         style="@style/TextStyle.REGISTER"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:text="@string/not_registered"
         app:layout_constraintEnd_toEndOf="@id/btn_login"
@@ -92,7 +92,6 @@
 
     <Button
         android:id="@+id/btn_register_here"
-        style="@style/TextStyle.REGISTER"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -119,7 +118,7 @@
         android:layout_height="64dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintGuide_percent="0.30191082"
+        app:layout_constraintGuide_percent="0.25"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
