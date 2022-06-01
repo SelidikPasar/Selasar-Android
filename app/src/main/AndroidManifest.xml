@@ -16,10 +16,12 @@
             android:exported="false" />
         <activity
             android:name=".view.ui.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.ui.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".view.ui.MainActivity"
             android:exported="true">
