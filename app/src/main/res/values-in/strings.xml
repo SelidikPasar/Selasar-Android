@@ -31,4 +31,6 @@
     <string name="not_registered">Anda belum terdaftar?</string>
     <string name="register_here">Daftar disini!</string>
     <string name="error_response">"Terjadi kesalahan, "</string>
+    <string name="title_detail">Detail Berita</string>
+    <string name="read_more">Baca Selengkapnya</string>
 </resources>

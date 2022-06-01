@@ -44,7 +44,7 @@
         android:id="@+id/btn_change_pw"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="54dp"
+        android:layout_marginTop="48dp"
         android:text="@string/change_password"
         app:layout_constraintEnd_toEndOf="@id/tv_email"
         app:layout_constraintStart_toStartOf="@id/tv_email"

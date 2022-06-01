@@ -32,4 +32,6 @@
     <string name="not_registered">Not registered yet?</string>
     <string name="register_here">Register here!</string>
     <string name="error_response">"Something wrong, "</string>
+    <string name="title_detail">Details News</string>
+    <string name="read_more">Read More</string>
 </resources>

@@ -1,7 +1,11 @@
 package com.selasarteam.selidikpasar.view.adapter
 
+import android.app.Activity
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.util.Pair
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +14,10 @@ import com.bumptech.glide.request.RequestOptions
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.databinding.ItemNewsBinding
+import com.selasarteam.selidikpasar.utils.DateFormatter
 import com.selasarteam.selidikpasar.view.adapter.ListNewsAdapter.ListViewHolder
+import com.selasarteam.selidikpasar.view.ui.DetailsNewsActivity
+import com.selasarteam.selidikpasar.view.ui.DetailsNewsActivity.Companion.EXTRA_DATA
 
 class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -29,8 +36,8 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
         fun bind(news: NewsEntity) {
             binding.apply {
                 tvTitleItem.text = news.title
+                tvDateItem.text = DateFormatter.formatDate(news.publishedAt)
                 tvNewsItem.text = news.content
-//                tvItemPublishedDate.text = DateFormatter.formatDate(news.publishedAt)
                 Glide.with(itemView.context)
                     .load(news.urlToImage)
                     .apply(
@@ -39,12 +46,21 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
                             .error(R.drawable.ic_broken_image)
                     )
                     .into(ivPhoto)
-            }
 
-            itemView.setOnClickListener {
-//                val intent = Intent(Intent.ACTION_VIEW)
-//                intent.data = Uri.parse(news.url)
-//                itemView.context.startActivity(intent)
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailsNewsActivity::class.java)
+                    intent.putExtra(EXTRA_DATA, news)
+
+                    val optionsCompat: ActivityOptionsCompat =
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(
+                            itemView.context as Activity,
+                            Pair(ivPhoto, "photo"),
+                            Pair(tvTitleItem, "title"),
+                            Pair(tvDateItem, "date"),
+                            Pair(tvNewsItem, "news")
+                        )
+                    itemView.context.startActivity(intent, optionsCompat.toBundle())
+                }
             }
         }
     }

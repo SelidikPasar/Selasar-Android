@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.service.response
+package com.selasarteam.selidikpasar.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
@@ -28,9 +28,6 @@ data class ArticlesItem(
     @field:SerializedName("description")
     val description: String,
 
-    @field:SerializedName("source")
-    val source: Source,
-
     @field:SerializedName("title")
     val title: String,
 
@@ -39,13 +36,4 @@ data class ArticlesItem(
 
     @field:SerializedName("content")
     val content: String? = null
-)
-
-data class Source(
-
-    @field:SerializedName("name")
-    val name: String,
-
-    @field:SerializedName("id")
-    val id: Any
 )
