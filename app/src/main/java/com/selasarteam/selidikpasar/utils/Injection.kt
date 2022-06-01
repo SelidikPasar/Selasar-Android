@@ -8,7 +8,7 @@ import com.selasarteam.selidikpasar.data.MainRepository
 import com.selasarteam.selidikpasar.data.local.room.NewsDatabase
 import com.selasarteam.selidikpasar.data.remote.service.ApiConfig
 
-private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("token")
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("user")
 
 object Injection {
     fun provideRepository(context: Context): MainRepository {
