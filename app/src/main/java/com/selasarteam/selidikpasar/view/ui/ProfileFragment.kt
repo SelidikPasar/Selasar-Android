@@ -8,6 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.selasarteam.selidikpasar.R
+import com.selasarteam.selidikpasar.data.local.entity.UserEntity
 import com.selasarteam.selidikpasar.databinding.FragmentProfileBinding
 import com.selasarteam.selidikpasar.view.model.ProfileViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
@@ -86,24 +90,26 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setupData() {
+        val user = Intent().getParcelableExtra<UserEntity?>(EXTRA_USER)
+
         binding.apply {
-//            tvName.text
-//            tvEmail.text
-//            Glide.with(requireContext())
-//                .load()
-//                .fitCenter()
-//                .apply(
-//                    RequestOptions
-//                        .placeholderOf(R.drawable.ic_loading_image)
-//                        .error(R.drawable.ic_broken_image)
-//                        .circleCrop()
-//                ).into(ivAvatar)
+            tvName.text = user?.name ?: "-"
+            tvEmail.text = user?.email ?: "-"
+            Glide.with(requireContext())
+                .load(user?.photo)
+                .fitCenter()
+                .apply(
+                    RequestOptions
+                        .circleCropTransform()
+                        .placeholder(R.drawable.ic_loading_image)
+                        .error(R.drawable.ic_broken_image)
+                ).into(ivAvatar)
         }
     }
 
     private fun setupAction() {
         binding.apply {
-            btnChangePw.setOnClickListener { }
+            btnChangePw.setOnClickListener { moveActivity() }
             btnChangeLang.setOnClickListener { startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS)) }
             btnLogout.setOnClickListener { viewModel.logout() }
 
@@ -118,8 +124,21 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    private fun moveActivity() {
+        startActivity(
+            Intent(
+                requireActivity(),
+                ChangePasswordActivity::class.java
+            )
+        )
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    companion object {
+        const val EXTRA_USER = "extra_user"
     }
 }
