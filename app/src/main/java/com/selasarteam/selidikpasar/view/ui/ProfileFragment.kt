@@ -18,9 +18,7 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-
         setupVieModel()
 
         return binding.root
