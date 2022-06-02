@@ -29,7 +29,7 @@
 
         <TextView
             android:id="@+id/tv_title_item"
-            style="@style/TextStyle.TITLE"
+            style="@style/TextStyle.HEADER"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="24dp"
@@ -45,6 +45,7 @@
 
         <TextView
             android:id="@+id/tv_date_item"
+            style="@style/TextStyle.DATE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/tv_date_item"
@@ -54,7 +55,7 @@
 
         <TextView
             android:id="@+id/tv_news_item"
-            style="@style/TextStyle.SUBTITLE"
+            style="@style/TextStyle.DESCRIPTION"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginVertical="8dp"

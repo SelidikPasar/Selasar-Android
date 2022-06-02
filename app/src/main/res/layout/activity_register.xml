@@ -8,7 +8,7 @@
 
     <TextView
         android:id="@+id/tv_header_register"
-        style="@style/TextStyle.HEADER"
+        style="@style/TextStyle.APP_NAME"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/header"
@@ -18,7 +18,7 @@
 
     <TextView
         android:id="@+id/tv_title_item"
-        style="@style/TextStyle.TITLE"
+        style="@style/TextStyle.HEADER"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
@@ -95,28 +95,32 @@
         android:id="@+id/cb_validation"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toTopOf="@id/btn_register"
         app:layout_constraintStart_toStartOf="@id/tl_password"
         app:layout_constraintTop_toBottomOf="@id/tl_password" />
 
     <TextView
         android:id="@+id/tv_validation"
+        style="@style/TextStyle.SUBHEADER"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
         android:labelFor="@id/cb_validation"
         android:text="@string/validation_terms"
+        app:layout_constraintBottom_toTopOf="@id/btn_register"
         app:layout_constraintEnd_toEndOf="@id/tl_password"
         app:layout_constraintStart_toEndOf="@id/cb_validation"
-        app:layout_constraintTop_toTopOf="@id/cb_validation" />
+        app:layout_constraintTop_toTopOf="@id/cb_validation"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btn_register"
+        style="@style/TextStyle.BUTTON"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,7 +128,7 @@
 
     <TextView
         android:id="@+id/tv_login_here"
-        style="@style/TextStyle.REGISTER"
+        style="@style/TextStyle.SUBHEADER"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -136,6 +140,7 @@
 
     <Button
         android:id="@+id/btn_login_here"
+        style="@style/TextStyle.BUTTON"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:gravity="center"

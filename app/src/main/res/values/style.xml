@@ -3,46 +3,54 @@
 
     <style name="TextStyle" />
 
-    <style name="TextStyle.TITLE">
-        <item name="fontFamily">@font/sarabun_bold</item>
-        <item name="android:textSize">24sp</item>
+    <style name="TextStyle.HEADER">
+        <item name="fontFamily">@font/sarabun_extra_bold</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextStyle.SUBTITLE">
-        <item name="fontFamily">@font/sarabun_light</item>
+    <style name="TextStyle.SUBHEADER">
+        <item name="fontFamily">@font/sarabun_regular</item>
         <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextStyle.TITLE">
+        <item name="fontFamily">@font/sarabun_regular</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="TextStyle.SUBTITLE">
+        <item name="fontFamily">@font/sarabun_regular</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextStyle.DESCRIPTION">
+        <item name="fontFamily">@font/sarabun_light</item>
+        <item name="android:textSize">12sp</item>
     </style>
 
     <style name="TextStyle.PROFILE">
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="TextStyle.PROFILE.NAME">
-        <item name="fontFamily">@font/sarabun_extra_bold</item>
+    <style name="TextStyle.PROFILE.TITLE">
+        <item name="fontFamily">@font/sarabun_bold</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TextStyle.PROFILE.EMAIL">
-        <item name="fontFamily">@font/sarabun_light</item>
+    <style name="TextStyle.PROFILE.SUBTITLE">
+        <item name="fontFamily">@font/sarabun_regular</item>
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="TextStyle.REGISTER">
-        <item name="fontFamily">@font/sarabun_regular</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:gravity">center</item>
-    </style>
-
     <style name="TextStyle.BUTTON">
-        <item name="fontFamily">@font/sarabun_light</item>
-        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/sarabun_regular</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
-        <item name="color">@color/md_theme_light_primary</item>
     </style>
 
-    <style name="TextStyle.HEADER">
+    <style name="TextStyle.APP_NAME">
         <item name="fontFamily">@font/sarabun_extra_bold_italic</item>
         <item name="android:textSize">48sp</item>
         <item name="android:textStyle">bold</item>
@@ -51,12 +59,5 @@
     <style name="TextStyle.DATE">
         <item name="fontFamily">@font/sarabun_italic</item>
         <item name="android:textSize">14sp</item>
-        <item name="color">@color/md_theme_light_primary</item>
-    </style>
-
-    <style name="TextStyle.DESC">
-        <item name="fontFamily">@font/sarabun_light</item>
-        <item name="android:textSize">12sp</item>
-        <item name="color">@color/md_theme_light_primary</item>
     </style>
 </resources>
