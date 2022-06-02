@@ -25,7 +25,9 @@ class ChangePasswordActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
-        binding.btnChangePw.setOnClickListener {  }
+        binding.apply {
+            btnChangePw.setOnClickListener {  }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
