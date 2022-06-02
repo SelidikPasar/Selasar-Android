@@ -85,8 +85,8 @@
 
     <ImageView
         android:id="@+id/iv_not_login"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:contentDescription="@string/not_login"
         android:src="@drawable/ic_broken_image"
         android:visibility="gone"
