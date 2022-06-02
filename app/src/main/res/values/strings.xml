@@ -34,5 +34,5 @@
     <string name="error_response">"Something wrong, "</string>
     <string name="title_detail">Details News</string>
     <string name="read_more">Read More</string>
-    <string name="copyright">Copyright Selidik Pasar, 2021</string>
+    <string name="icons">icons</string>
 </resources>

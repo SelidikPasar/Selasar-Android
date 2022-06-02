@@ -32,13 +32,19 @@
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/menu/main_menu.xml" value="0.19947916666666668" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/drawable/ic_email.xml" value="0.196" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/activity_detail_price.xml" value="0.33" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/activity_login.xml" value="0.30572916666666666" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_item.xml" value="0.25" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_item_list.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_news.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_price.xml" value="0.33" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_profile.xml" value="0.2572463768115942" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/fragment_test.xml" value="0.18697916666666667" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/item_market.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/item_news.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/layout/item_price.xml" value="0.33" />
+        <entry key="..\:/Users/pradi/Documents/GitHub/Selasar-Android/app/src/main/res/menu/bottom_nav_menu.xml" value="0.262037037037037" />
       </map>
     </option>
   </component>

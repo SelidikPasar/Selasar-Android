@@ -28,9 +28,4 @@
         android:name="com.selasarteam.selidikpasar.view.ui.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
-    <fragment
-        android:id="@+id/itemFragment"
-        android:name="com.selasarteam.selidikpasar.view.ui.ItemFragment"
-        android:label="fragment_item_list"
-        tools:layout="@layout/fragment_item_list" />
 </navigation>
