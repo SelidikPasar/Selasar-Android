@@ -97,7 +97,7 @@
 
     <TextView
         android:id="@+id/tv_not_login"
-        style="@style/TextStyle.SUBHEADER"
+        style="@style/TextStyle.PROFILE.SUBTITLE"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
