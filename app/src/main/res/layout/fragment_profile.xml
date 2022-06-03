@@ -121,7 +121,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_not_login" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_horizontal"
         android:layout_width="wrap_content"

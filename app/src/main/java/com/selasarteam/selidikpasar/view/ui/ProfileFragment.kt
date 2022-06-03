@@ -10,8 +10,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.R
-import com.selasarteam.selidikpasar.data.local.entity.UserEntity
+import com.selasarteam.selidikpasar.data.local.datastore.UserModel
 import com.selasarteam.selidikpasar.databinding.FragmentProfileBinding
 import com.selasarteam.selidikpasar.view.model.ProfileViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
@@ -23,6 +27,9 @@ class ProfileFragment : Fragment() {
 
     private var factory: ViewModelFactory? = null
     private val viewModel: ProfileViewModel by viewModels { factory!! }
+
+    private var auth: FirebaseAuth? = null
+    private var currentUser: FirebaseUser? = null
 
     private var token = ""
 
@@ -43,9 +50,11 @@ class ProfileFragment : Fragment() {
     }
 
     private fun checkUserStatus() {
+        auth = Firebase.auth
+        currentUser = auth?.currentUser
         viewModel.getSession().observe(viewLifecycleOwner) {
             token = it.token
-            if (!it.isLogin) {
+            if (!it.isLogin && currentUser == null) {
                 setupView(false)
             } else {
                 setupView(true)
@@ -90,7 +99,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setupData() {
-        val user = Intent().getParcelableExtra<UserEntity?>(EXTRA_USER)
+        val user = arguments?.getParcelable<UserModel>(EXTRA_USER)
 
         binding.apply {
             tvName.text = user?.name ?: "-"
@@ -111,7 +120,7 @@ class ProfileFragment : Fragment() {
         binding.apply {
             btnChangePw.setOnClickListener { moveActivity() }
             btnChangeLang.setOnClickListener { startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS)) }
-            btnLogout.setOnClickListener { viewModel.logout() }
+            btnLogout.setOnClickListener { userLogout() }
 
             btnRegisterHere.setOnClickListener {
                 startActivity(
@@ -124,6 +133,12 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    private fun userLogout() {
+        viewModel.logout()
+        auth?.signOut()
+        startActivity(Intent(requireActivity(), MainActivity::class.java))
+    }
+
     private fun moveActivity() {
         startActivity(
             Intent(
@@ -131,6 +146,11 @@ class ProfileFragment : Fragment() {
                 ChangePasswordActivity::class.java
             )
         )
+    }
+
+    override fun onStart() {
+        super.onStart()
+        checkUserStatus()
     }
 
     override fun onDestroy() {

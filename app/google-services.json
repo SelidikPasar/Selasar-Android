@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1082972829821",
+    "project_id": "selasar",
+    "storage_bucket": "selasar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082972829821:android:8c96cde5185197d25a1914",
+        "android_client_info": {
+          "package_name": "com.selasarteam.selidikpasar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082972829821-13esgnivmjj25sh5qtcm603rtkjlosn7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGnesugIE1BcyfJ7iu7WseNh3VKQPT934"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082972829821-13esgnivmjj25sh5qtcm603rtkjlosn7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

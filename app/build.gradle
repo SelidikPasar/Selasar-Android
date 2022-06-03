@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -17,6 +18,7 @@ android {
 
         buildConfigField("String", "BASE_URL", '"https://newsapi.org/v2/"')
         buildConfigField("String", "API_KEY", '"82f6d540990043a3a9957fcf575d19ae"')
+        buildConfigField("String", "WEB_CLIENT_ID", '"1082972829821-13esgnivmjj25sh5qtcm603rtkjlosn7.apps.googleusercontent.com"')
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -44,11 +46,11 @@ android {
 dependencies {
 
     // Core
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
 
     // UI Material
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.github.bumptech.glide:glide:4.13.1'
 
@@ -58,6 +60,8 @@ dependencies {
     implementation "com.github.kirich1409:viewbindingpropertydelegate:1.5.3"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
 
     // Navigation
     def navigation_version = "2.4.2"
