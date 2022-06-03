@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
     id 'com.google.gms.google-services'
+    id 'com.google.secrets_gradle_plugin' version '0.4'
 }
 
 android {
@@ -16,9 +17,10 @@ android {
         versionCode 1
         versionName "1.0"
 
-        buildConfigField("String", "BASE_URL", '"https://newsapi.org/v2/"')
-        buildConfigField("String", "API_KEY", '"82f6d540990043a3a9957fcf575d19ae"')
-        buildConfigField("String", "WEB_CLIENT_ID", '"1082972829821-13esgnivmjj25sh5qtcm603rtkjlosn7.apps.googleusercontent.com"')
+        buildConfigField("String", "BASE_URL", BASE_URL)
+        buildConfigField("String", "API_KEY", API_KEY)
+        buildConfigField("String", "GCP_KEY", GCP_KEY)
+        buildConfigField("String", "WEB_CLIENT_ID", WEB_CLIENT_ID)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
