@@ -35,4 +35,7 @@
     <string name="title_detail">Details News</string>
     <string name="read_more">Read More</string>
     <string name="icons">icons</string>
+    <string name="cayanne_pepper">Cayanne Pepper</string>
+    <string name="cooking_oil">Cooking Oil</string>
+    <string name="sugar">Sugar</string>
 </resources>

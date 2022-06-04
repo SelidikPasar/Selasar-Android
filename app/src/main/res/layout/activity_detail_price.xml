@@ -6,19 +6,277 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.DetailPriceActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_news"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:clipToPadding="false"
-        android:padding="16dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+    <ImageView
+        android:id="@+id/image_detail_rice"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_rice"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:listitem="@layout/item_price" />
+        app:layout_constraintTop_toTopOf="@+id/btn_rice"
+        app:srcCompat="@drawable/slsr_detail_rice"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_chicken"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_chicken"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_chicken"
+        app:srcCompat="@drawable/slsr_detail_chicken"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_beef"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_beef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_beef"
+        app:srcCompat="@drawable/slsr_detail_beef"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_egg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_egg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_egg"
+        app:srcCompat="@drawable/slsr_detail_egg"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_shallot"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_shallot"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_shallot"
+        app:srcCompat="@drawable/slsr_detail_shallot"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_garlic"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_garlic"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_garlic"
+        app:srcCompat="@drawable/slsr_detail_garlic"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_chilli"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_redchilli"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_redchilli"
+        app:srcCompat="@drawable/slsr_detail_chilli"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_cayanne"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_cayanne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_redchilli"
+        app:srcCompat="@drawable/slsr_detail_cayanne"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_oil"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_oil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_oil"
+        app:srcCompat="@drawable/slsr_detail_oil"
+        android:contentDescription="@string/icons" />
+
+    <ImageView
+        android:id="@+id/image_detail_sugar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_sugar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_oil"
+        app:srcCompat="@drawable/slsr_detail_sugar"
+        android:contentDescription="@string/icons" />
+
+    <Button
+        android:id="@+id/btn_rice"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/rice"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_rice"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_chicken"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/chicken"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_chicken"
+        app:layout_constraintTop_toBottomOf="@+id/btn_rice" />
+
+    <Button
+        android:id="@+id/btn_beef"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/beef"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_beef"
+        app:layout_constraintTop_toBottomOf="@+id/btn_chicken" />
+
+    <Button
+        android:id="@+id/btn_egg"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/egg"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_egg"
+        app:layout_constraintTop_toBottomOf="@+id/btn_beef" />
+
+    <Button
+        android:id="@+id/btn_shallot"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/shallot"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_shallot"
+        app:layout_constraintTop_toBottomOf="@+id/btn_egg" />
+
+    <Button
+        android:id="@+id/btn_garlic"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/garlic"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_garlic"
+        app:layout_constraintTop_toBottomOf="@+id/btn_shallot" />
+
+    <Button
+        android:id="@+id/btn_redchilli"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/red_chilli"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_chilli"
+        app:layout_constraintTop_toBottomOf="@+id/btn_garlic" />
+
+    <Button
+        android:id="@+id/btn_cayanne"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/cayanne_pepper"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_cayanne"
+        app:layout_constraintTop_toBottomOf="@+id/btn_redchilli" />
+
+    <Button
+        android:id="@+id/btn_oil"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/cooking_oil"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_oil"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cayanne" />
+
+    <Button
+        android:id="@+id/btn_sugar"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:fontFamily="@font/sarabun_regular"
+        android:text="@string/sugar"
+        android:textAlignment="textStart"
+        android:textColor="@color/md_theme_light_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toEndOf="@+id/image_detail_sugar"
+        app:layout_constraintTop_toBottomOf="@+id/btn_oil" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
