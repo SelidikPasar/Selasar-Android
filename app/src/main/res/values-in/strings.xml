@@ -33,4 +33,8 @@
     <string name="error_response">"Terjadi kesalahan, "</string>
     <string name="title_detail">Detail Berita</string>
     <string name="read_more">Baca Selengkapnya</string>
+    <string name="icons">Ikon</string>
+    <string name="cayanne_pepper">Cabe Rawit</string>
+    <string name="cooking_oil">Minyak Goreng</string>
+    <string name="sugar">Gula</string>
 </resources>
