@@ -42,4 +42,5 @@
     <string name="copyright" translatable="false">&#169; Selidik Pasar, 2022</string>
     <string name="not_login">Not Login</string>
     <string name="or">Or</string>
+    <string name="icons">icons</string>
 </resources>
