@@ -114,6 +114,7 @@ class ProfileFragment : Fragment() {
                         .error(R.drawable.ic_broken_image)
                 ).into(ivAvatar)
         }
+
     }
 
     private fun setupAction() {

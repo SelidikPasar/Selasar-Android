@@ -24,6 +24,7 @@ import com.selasarteam.selidikpasar.view.model.LoginViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
 import com.selasarteam.selidikpasar.view.ui.ProfileFragment.Companion.EXTRA_USER
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
@@ -99,10 +100,9 @@ class LoginActivity : AppCompatActivity() {
                     ).show()
                     firebaseAuthWithGoogle(idToken!!)
                     val user = UserModel(
-                        "$idToken",
-                        "$displayName",
-                        "$email",
-                        "$photoUrl"
+                        displayName.toString(),
+                        email.toString(),
+                        photoUrl.toString()
                     )
                     val data = Bundle()
                     data.putParcelable(EXTRA_USER, user)
