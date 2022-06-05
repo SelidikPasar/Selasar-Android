@@ -18,10 +18,10 @@ class MainRepository private constructor(
     private val preferences: SessionPreferences,
     private val apiService: ApiService
 ) {
-    fun getHeadlineNews(): LiveData<Result<List<NewsEntity>>> = liveData {
+    fun getSummaryNews(): LiveData<Result<List<NewsEntity>>> = liveData {
         emit(Result.Loading)
         try {
-            val response = apiService.getNews(BuildConfig.API_KEY)
+            val response = apiService.getSummaryNews()
             val articles = response.articles
             val newsList = articles.map { article ->
                 NewsEntity(
@@ -36,7 +36,7 @@ class MainRepository private constructor(
             newsDao.deleteAll()
             newsDao.insertNews(newsList)
         } catch (e: Exception) {
-            Log.d(TAG, "getHeadlineNews: ${e.message.toString()}")
+            Log.d(TAG, "getSummaryNews: ${e.message.toString()}")
             emit(Result.Error(e.message.toString()))
         }
         val localData: LiveData<Result<List<NewsEntity>>> =

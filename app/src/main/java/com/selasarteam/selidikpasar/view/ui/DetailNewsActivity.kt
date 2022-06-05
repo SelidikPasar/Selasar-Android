@@ -39,6 +39,7 @@ class DetailNewsActivity : AppCompatActivity() {
             tvTitleDetail.text = data.title
             tvNewsDetail.text = data.content
             tvDateDetail.text = DateFormatter.formatDate(data.publishedAt)
+            (getString(R.string.author) + data.author).also { tvAuthorDetail.text = it }
             Glide.with(this@DetailNewsActivity)
                 .load(data.urlToImage)
                 .fitCenter()

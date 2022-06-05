@@ -53,7 +53,7 @@ class NewsFragment : Fragment() {
     }
 
     private fun setupList() {
-        viewModel.getHeadlineNews().observe(viewLifecycleOwner) { result ->
+        viewModel.getSummaryNews().observe(viewLifecycleOwner) { result ->
             if (result != null) {
                 when (result) {
                     is Result.Loading -> {

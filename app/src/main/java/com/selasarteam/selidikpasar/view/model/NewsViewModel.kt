@@ -4,5 +4,5 @@ import androidx.lifecycle.ViewModel
 import com.selasarteam.selidikpasar.data.MainRepository
 
 class NewsViewModel(private val repo: MainRepository) : ViewModel() {
-    fun getHeadlineNews() = repo.getHeadlineNews()
+    fun getSummaryNews() = repo.getSummaryNews()
 }

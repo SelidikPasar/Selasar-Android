@@ -40,6 +40,7 @@
     <string name="change_pw">Ganti Password</string>
     <string name="confirm_password">Konfirmasi Password</string>
     <string name="or">Atau</string>
-    <string name="icons">Ikon</string>
+    <string name="icons">Ikon-ikon</string>
     <string name="retry">Coba lagi</string>
+    <string name="author">Penulis</string>
 </resources>
