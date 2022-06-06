@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentPriceBinding
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
 
@@ -39,7 +38,7 @@ class PriceFragment : Fragment() {
 
 
         binding.ibMore.setOnClickListener{
-            val intent = Intent(activity, DetailPriceActivity::class.java)
+            val intent = Intent(activity, MorePriceActivity::class.java)
             activity?.startActivity(intent)
 
 //            childFragmentManager.beginTransaction().apply {
