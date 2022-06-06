@@ -37,7 +37,7 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
             binding.apply {
                 tvTitleItem.text = news.title
                 tvDateItem.text = DateFormatter.formatDate(news.publishedAt)
-                tvNewsItem.text = news.content
+                tvNewsItem.text = news.description
                 Glide.with(itemView.context)
                     .load(news.urlToImage)
                     .apply(
@@ -74,7 +74,8 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
 
                 override fun areContentsTheSame(oldNews: NewsEntity, newNews: NewsEntity): Boolean {
                     return oldNews.title == newNews.title &&
-                            oldNews.content == newNews.content &&
+                            oldNews.publishedAt == newNews.publishedAt &&
+                            oldNews.description == newNews.description &&
                             oldNews.urlToImage == newNews.urlToImage
 
                 }

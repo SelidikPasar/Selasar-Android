@@ -26,9 +26,10 @@ class MainRepository private constructor(
             val newsList = articles.map { article ->
                 NewsEntity(
                     article.title,
-                    article.author,
+                    article.description ?: "None",
+                    article.author ?: "Anonymous",
                     article.publishedAt,
-                    article.content,
+                    article.content ?: "None",
                     article.urlToImage,
                     article.url
                 )

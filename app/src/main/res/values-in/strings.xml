@@ -42,5 +42,5 @@
     <string name="or">Atau</string>
     <string name="icons">Ikon-ikon</string>
     <string name="retry">Coba lagi</string>
-    <string name="author">Penulis</string>
+    <string name="author">"Penulis: "</string>
 </resources>

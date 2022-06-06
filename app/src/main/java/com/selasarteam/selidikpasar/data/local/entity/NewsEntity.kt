@@ -13,6 +13,9 @@ class NewsEntity(
     @field:PrimaryKey
     val title: String,
 
+    @field:ColumnInfo(name = "description")
+    val description: String? = null,
+
     @field:ColumnInfo(name = "author")
     val author: String? = null,
 

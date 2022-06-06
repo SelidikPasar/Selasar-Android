@@ -44,5 +44,5 @@
     <string name="or">Or</string>
     <string name="icons">Icons</string>
     <string name="retry">Retry</string>
-    <string name="author">Author:</string>
+    <string name="author">"Author: "</string>
 </resources>
