@@ -16,92 +16,66 @@ class MorePriceActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        rice()
-        chicken()
-        beef()
-        egg()
-        shallot()
-        garlic()
-        redChilli()
-        cayenne()
-        oil()
-        sugar()
+        ingredientsDetail()
     }
 
+    private fun ingredientsDetail() {
+        //make when kumaha ini gw lupa
 
-    private fun rice(){
         binding.btnRice.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun chicken(){
         binding.btnChicken.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun beef(){
         binding.btnBeef.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun egg(){
         binding.btnEgg.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun shallot(){
         binding.btnShallot.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun garlic(){
         binding.btnGarlic.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun redChilli(){
         binding.btnRedchilli.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun cayenne(){
         binding.btnCayenne.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun oil(){
         binding.btnOil.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
-    }
 
 
-    private fun sugar(){
         binding.btnSugar.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
