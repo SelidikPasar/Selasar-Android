@@ -237,7 +237,7 @@
         android:layout_margin="4dp"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/sarabun_regular"
-        android:text="@string/cayanne_pepper"
+        android:text="@string/cayenne_pepper"
         android:textAlignment="textStart"
         android:textColor="@color/md_theme_light_text"
         android:textSize="18sp"

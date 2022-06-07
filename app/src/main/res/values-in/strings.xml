@@ -24,6 +24,18 @@
     <string name="beef">Daging Sapi</string>
     <string name="chicken">Daging Ayam</string>
     <string name="avatar">Avatar Pengguna</string>
+    <string-array name="Ingredients">
+        <item>Beras</item>
+        <item>Ayam</item>
+        <item>Daging</item>
+        <item>Telur</item>
+        <item>Bawang Merah</item>
+        <item>Bawang Putih</item>
+        <item>Cabai Merah</item>
+        <item>Cabai Rawit</item>
+        <item>Minyak Goreng</item>
+        <item>Gula</item>
+    </string-array>
     <string name="logout">Keluar</string>
     <string name="change_language">Ganti Bahasa</string>
     <string name="change_password">Ganti Password</string>
@@ -34,7 +46,7 @@
     <string name="title_detail">Detail Berita</string>
     <string name="read_more">Baca Selengkapnya</string>
     <string name="icons">Ikon</string>
-    <string name="cayanne_pepper">Cabe Rawit</string>
+    <string name="cayenne_pepper">Cabe Rawit</string>
     <string name="cooking_oil">Minyak Goreng</string>
     <string name="sugar">Gula</string>
 </resources>

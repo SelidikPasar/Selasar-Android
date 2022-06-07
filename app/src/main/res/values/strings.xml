@@ -22,6 +22,21 @@
     <string name="shallot">Shallot</string>
     <string name="garlic">Garlic</string>
     <string name="red_chilli">Red Chilli Pepper</string>
+    <string name="cayenne_pepper">Cayenne Pepper</string>
+    <string name="cooking_oil">Cooking Oil</string>
+    <string name="sugar">Sugar</string>
+    <string-array name="Ingredients">
+        <item>Rice</item>
+        <item>Chicken</item>
+        <item>Beef</item>
+        <item>Egg</item>
+        <item>Shallot</item>
+        <item>Garlic</item>
+        <item>Red Chilli Pepper</item>
+        <item>Cayenne Pepper</item>
+        <item>Cooking Oil</item>
+        <item>Sugar</item>
+    </string-array>
     <string name="more">More</string>
     <string name="header" translatable="false">SELASAR</string>
     <string name="avatar">User Avatar</string>
@@ -35,7 +50,5 @@
     <string name="title_detail">Details News</string>
     <string name="read_more">Read More</string>
     <string name="icons">icons</string>
-    <string name="cayanne_pepper">Cayanne Pepper</string>
-    <string name="cooking_oil">Cooking Oil</string>
-    <string name="sugar">Sugar</string>
+
 </resources>
