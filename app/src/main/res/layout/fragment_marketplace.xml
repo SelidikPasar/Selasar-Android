@@ -26,7 +26,6 @@
         app:layout_constraintTop_toTopOf="@id/gl_horizontal"
         tools:listitem="@layout/item_market" />
 
-
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
