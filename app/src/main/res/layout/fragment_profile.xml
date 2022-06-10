@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="18dp"
         tools:text="@string/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,22 +34,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         tools:text="@string/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_name" />
-
-    <Button
-        android:id="@+id/btn_change_pw"
-        style="@style/TextStyle.BUTTON"
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/change_password"
-        app:layout_constraintEnd_toEndOf="@id/tv_email"
-        app:layout_constraintStart_toStartOf="@id/tv_email"
-        app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
     <Button
         android:id="@+id/btn_change_lang"
@@ -58,9 +47,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="@string/change_language"
-        app:layout_constraintEnd_toEndOf="@id/btn_change_pw"
-        app:layout_constraintStart_toStartOf="@id/btn_change_pw"
-        app:layout_constraintTop_toBottomOf="@id/btn_change_pw" />
+        app:layout_constraintEnd_toEndOf="@id/tv_email"
+        app:layout_constraintStart_toStartOf="@id/tv_email"
+        app:layout_constraintTop_toBottomOf="@id/tv_email" />
 
     <Button
         android:id="@+id/btn_logout"

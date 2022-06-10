@@ -72,7 +72,6 @@ class ProfileFragment : Fragment() {
                 ivAvatar.visibility = View.VISIBLE
                 tvName.visibility = View.VISIBLE
                 tvEmail.visibility = View.VISIBLE
-                btnChangePw.visibility = View.VISIBLE
                 btnChangeLang.visibility = View.VISIBLE
                 btnLogout.visibility = View.VISIBLE
             }
@@ -86,7 +85,6 @@ class ProfileFragment : Fragment() {
                 ivAvatar.visibility = View.GONE
                 tvName.visibility = View.GONE
                 tvEmail.visibility = View.GONE
-                btnChangePw.visibility = View.GONE
                 btnChangeLang.visibility = View.GONE
                 btnLogout.visibility = View.GONE
             }
@@ -118,7 +116,6 @@ class ProfileFragment : Fragment() {
 
     private fun setupAction() {
         binding.apply {
-            btnChangePw.setOnClickListener { moveActivity() }
             btnChangeLang.setOnClickListener { startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS)) }
             btnLogout.setOnClickListener { userLogout() }
 
@@ -137,15 +134,6 @@ class ProfileFragment : Fragment() {
         startActivity(Intent(requireActivity(), MainActivity::class.java))
         viewModel.logout()
         auth?.signOut()
-    }
-
-    private fun moveActivity() {
-        startActivity(
-            Intent(
-                requireActivity(),
-                ChangePasswordActivity::class.java
-            )
-        )
     }
 
     override fun onStart() {
