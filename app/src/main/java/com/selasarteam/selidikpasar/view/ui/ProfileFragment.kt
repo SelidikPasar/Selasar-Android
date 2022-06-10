@@ -102,7 +102,6 @@ class ProfileFragment : Fragment() {
                 tvEmail.text = it.email
                 Glide.with(requireContext())
                     .load(it.photo)
-                    .fitCenter()
                     .apply(
                         RequestOptions
                             .circleCropTransform()
