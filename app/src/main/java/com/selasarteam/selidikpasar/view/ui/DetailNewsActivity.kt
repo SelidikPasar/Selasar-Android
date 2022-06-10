@@ -45,7 +45,7 @@ class DetailNewsActivity : AppCompatActivity() {
                 .fitCenter()
                 .apply(
                     RequestOptions
-                        .placeholderOf(R.drawable.ic_loading_image)
+                        .placeholderOf(R.drawable.ic_image_loading)
                         .error(R.drawable.ic_broken_image)
                 ).into(ivPhotoDetail)
             url = data.url

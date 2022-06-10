@@ -106,8 +106,8 @@ class ProfileFragment : Fragment() {
                     .apply(
                         RequestOptions
                             .circleCropTransform()
-                            .placeholder(R.drawable.ic_loading_image)
-                            .error(R.drawable.ic_broken_image)
+                            .placeholder(R.drawable.ic_user_loading)
+                            .error(R.drawable.ic_user_error)
                     ).into(ivAvatar)
             }
         }

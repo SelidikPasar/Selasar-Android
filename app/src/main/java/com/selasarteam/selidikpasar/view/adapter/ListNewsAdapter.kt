@@ -42,7 +42,7 @@ class ListNewsAdapter : ListAdapter<NewsEntity, ListViewHolder>(DIFF_CALLBACK) {
                     .load(news.urlToImage)
                     .apply(
                         RequestOptions
-                            .placeholderOf(R.drawable.ic_loading_image)
+                            .placeholderOf(R.drawable.ic_image_loading)
                             .error(R.drawable.ic_broken_image)
                     )
                     .into(ivPhoto)
