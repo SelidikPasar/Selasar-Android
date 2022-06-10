@@ -15,7 +15,6 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.R
-import com.selasarteam.selidikpasar.data.local.datastore.UserModel
 import com.selasarteam.selidikpasar.databinding.FragmentProfileBinding
 import com.selasarteam.selidikpasar.view.model.ProfileViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
@@ -99,20 +98,20 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setupData() {
-        val user = arguments?.getParcelable<UserModel>(EXTRA_USER)
-
         binding.apply {
-            tvName.text = user?.name ?: "-"
-            tvEmail.text = user?.email ?: "-"
-            Glide.with(requireContext())
-                .load(user?.photo)
-                .fitCenter()
-                .apply(
-                    RequestOptions
-                        .circleCropTransform()
-                        .placeholder(R.drawable.ic_loading_image)
-                        .error(R.drawable.ic_broken_image)
-                ).into(ivAvatar)
+            viewModel.getSession().observe(viewLifecycleOwner) {
+                tvName.text = it.name
+                tvEmail.text = it.email
+                Glide.with(requireContext())
+                    .load(it.photo)
+                    .fitCenter()
+                    .apply(
+                        RequestOptions
+                            .circleCropTransform()
+                            .placeholder(R.drawable.ic_loading_image)
+                            .error(R.drawable.ic_broken_image)
+                    ).into(ivAvatar)
+            }
         }
 
     }
@@ -135,9 +134,9 @@ class ProfileFragment : Fragment() {
     }
 
     private fun userLogout() {
+        startActivity(Intent(requireActivity(), MainActivity::class.java))
         viewModel.logout()
         auth?.signOut()
-        startActivity(Intent(requireActivity(), MainActivity::class.java))
     }
 
     private fun moveActivity() {
@@ -157,9 +156,5 @@ class ProfileFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
-    }
-
-    companion object {
-        const val EXTRA_USER = "extra_user"
     }
 }

@@ -18,12 +18,10 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.BuildConfig
-import com.selasarteam.selidikpasar.data.local.datastore.UserModel
+import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
 import com.selasarteam.selidikpasar.databinding.ActivityLoginBinding
 import com.selasarteam.selidikpasar.view.model.LoginViewModel
 import com.selasarteam.selidikpasar.view.model.ViewModelFactory
-import com.selasarteam.selidikpasar.view.ui.ProfileFragment.Companion.EXTRA_USER
-
 
 class LoginActivity : AppCompatActivity() {
 
@@ -99,16 +97,15 @@ class LoginActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                     firebaseAuthWithGoogle(idToken!!)
-                    val user = UserModel(
-                        displayName.toString(),
-                        email.toString(),
-                        photoUrl.toString()
+                    saveSession(
+                        SessionModel(
+                            displayName.toString(),
+                            email.toString(),
+                            photoUrl.toString(),
+                            idToken.toString(),
+                            true
+                        )
                     )
-                    val data = Bundle()
-                    data.putParcelable(EXTRA_USER, user)
-
-                    val fragment = ProfileFragment()
-                    fragment.arguments = data
                 }
             } catch (e: ApiException) {
                 // Google Sign In failed, update UI appropriately
@@ -146,9 +143,12 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun saveSession(session: SessionModel) {
+        viewModel.saveSession(session)
+    }
+
     override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         updateUI(currentUser)
     }
