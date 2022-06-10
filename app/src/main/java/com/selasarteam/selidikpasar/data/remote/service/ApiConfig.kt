@@ -15,12 +15,12 @@ object ApiConfig {
         }
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-//            .addInterceptor { chain ->
-//                chain.request().newBuilder()
-//                    .addHeader("apiKey", BuildConfig.API_KEY)
-//                    .build()
-//                    .let(chain::proceed)
-//            }
+            .addInterceptor { chain ->
+                chain.request().newBuilder()
+                    .addHeader("Authorization", BuildConfig.GCP_KEY)
+                    .build()
+                    .let(chain::proceed)
+            }
             .build()
         val retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)
