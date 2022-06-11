@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.view.model
+package com.selasarteam.selidikpasar.view.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel

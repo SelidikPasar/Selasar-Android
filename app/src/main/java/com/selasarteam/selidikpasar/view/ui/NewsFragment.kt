@@ -10,8 +10,8 @@ import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentNewsBinding
 import com.selasarteam.selidikpasar.utils.Result
 import com.selasarteam.selidikpasar.view.adapter.ListNewsAdapter
-import com.selasarteam.selidikpasar.view.model.NewsViewModel
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.NewsViewModel
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class NewsFragment : Fragment() {
 

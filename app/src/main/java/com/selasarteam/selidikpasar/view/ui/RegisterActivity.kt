@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.selasarteam.selidikpasar.databinding.ActivityRegisterBinding
-import com.selasarteam.selidikpasar.view.model.RegisterViewModel
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.RegisterViewModel
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class RegisterActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.view.model
+package com.selasarteam.selidikpasar.view.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

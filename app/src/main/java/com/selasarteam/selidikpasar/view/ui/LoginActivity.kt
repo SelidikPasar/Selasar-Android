@@ -20,8 +20,8 @@ import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.BuildConfig
 import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
 import com.selasarteam.selidikpasar.databinding.ActivityLoginBinding
-import com.selasarteam.selidikpasar.view.model.LoginViewModel
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.LoginViewModel
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class LoginActivity : AppCompatActivity() {
 

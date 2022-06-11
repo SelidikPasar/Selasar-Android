@@ -10,8 +10,8 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.ActivityMainBinding
-import com.selasarteam.selidikpasar.view.model.MainViewModel
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.MainViewModel
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 

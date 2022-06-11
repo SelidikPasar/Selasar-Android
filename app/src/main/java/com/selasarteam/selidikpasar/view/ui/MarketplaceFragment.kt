@@ -12,7 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentMarketplaceBinding
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 
 class MarketplaceFragment : Fragment() {

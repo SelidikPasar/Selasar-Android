@@ -5,6 +5,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.selasarteam.selidikpasar.data.MainRepository
+import com.selasarteam.selidikpasar.data.local.datastore.SessionPreferences
 import com.selasarteam.selidikpasar.data.local.room.NewsDatabase
 import com.selasarteam.selidikpasar.data.remote.service.ApiConfig
 

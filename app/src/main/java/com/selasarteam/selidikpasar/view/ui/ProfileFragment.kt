@@ -16,8 +16,8 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentProfileBinding
-import com.selasarteam.selidikpasar.view.model.ProfileViewModel
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.ProfileViewModel
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class ProfileFragment : Fragment() {
 

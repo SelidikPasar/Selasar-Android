@@ -6,9 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentPriceBinding
-import com.selasarteam.selidikpasar.view.model.ViewModelFactory
+import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
 class PriceFragment : Fragment() {
 
