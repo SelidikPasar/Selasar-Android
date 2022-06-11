@@ -18,7 +18,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.BuildConfig
-import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
+import com.selasarteam.selidikpasar.model.local.datastore.SessionModel
 import com.selasarteam.selidikpasar.databinding.ActivityLoginBinding
 import com.selasarteam.selidikpasar.view.viewmodel.LoginViewModel
 import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory

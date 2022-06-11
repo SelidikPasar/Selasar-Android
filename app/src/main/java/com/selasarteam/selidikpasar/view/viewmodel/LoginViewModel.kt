@@ -2,8 +2,8 @@ package com.selasarteam.selidikpasar.view.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.selasarteam.selidikpasar.data.MainRepository
-import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
+import com.selasarteam.selidikpasar.model.MainRepository
+import com.selasarteam.selidikpasar.model.local.datastore.SessionModel
 import kotlinx.coroutines.launch
 
 class LoginViewModel(private val repo: MainRepository) : ViewModel() {

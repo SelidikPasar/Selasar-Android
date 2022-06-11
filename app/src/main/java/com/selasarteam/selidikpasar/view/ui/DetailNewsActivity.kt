@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.selasarteam.selidikpasar.R
-import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
+import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.databinding.ActivityDetailNewsBinding
 import com.selasarteam.selidikpasar.utils.DateFormatter
 

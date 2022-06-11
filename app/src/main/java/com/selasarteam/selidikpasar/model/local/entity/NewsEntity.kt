@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.data.local.entity
+package com.selasarteam.selidikpasar.model.local.entity
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

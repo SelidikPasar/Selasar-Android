@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.data.remote.service
+package com.selasarteam.selidikpasar.model.remote.service
 
 import com.selasarteam.selidikpasar.BuildConfig
 import okhttp3.OkHttpClient

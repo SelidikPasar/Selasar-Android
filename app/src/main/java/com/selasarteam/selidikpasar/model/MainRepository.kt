@@ -1,16 +1,16 @@
-package com.selasarteam.selidikpasar.data
+package com.selasarteam.selidikpasar.model
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.liveData
 import androidx.lifecycle.map
-import com.selasarteam.selidikpasar.data.local.datastore.SessionModel
-import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
-import com.selasarteam.selidikpasar.data.local.room.NewsDao
-import com.selasarteam.selidikpasar.data.remote.service.ApiService
+import com.selasarteam.selidikpasar.model.local.datastore.SessionModel
+import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
+import com.selasarteam.selidikpasar.model.local.room.NewsDao
+import com.selasarteam.selidikpasar.model.remote.service.ApiService
 import com.selasarteam.selidikpasar.utils.Result
-import com.selasarteam.selidikpasar.data.local.datastore.SessionPreferences
+import com.selasarteam.selidikpasar.model.local.datastore.SessionPreferences
 
 class MainRepository private constructor(
     private val newsDao: NewsDao,

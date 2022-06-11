@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.selasarteam.selidikpasar.R
-import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
+import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.databinding.ItemNewsBinding
 import com.selasarteam.selidikpasar.utils.DateFormatter
 import com.selasarteam.selidikpasar.view.adapter.ListNewsAdapter.ListViewHolder

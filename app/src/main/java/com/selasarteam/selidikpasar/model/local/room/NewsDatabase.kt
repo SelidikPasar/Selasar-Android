@@ -1,10 +1,10 @@
-package com.selasarteam.selidikpasar.data.local.room
+package com.selasarteam.selidikpasar.model.local.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.selasarteam.selidikpasar.data.local.entity.NewsEntity
+import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 
 @Database(entities = [NewsEntity::class], version = 1, exportSchema = false)
 abstract class NewsDatabase : RoomDatabase() {

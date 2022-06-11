@@ -1,4 +1,4 @@
-package com.selasarteam.selidikpasar.data.remote.response
+package com.selasarteam.selidikpasar.model.remote.response
 
 import com.google.gson.annotations.SerializedName
 
