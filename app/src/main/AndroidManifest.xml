@@ -25,6 +25,10 @@
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".view.ui.MorePriceActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".view.ui.DetailNewsActivity"
             android:exported="false" />
         <activity

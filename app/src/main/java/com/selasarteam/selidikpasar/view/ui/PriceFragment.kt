@@ -19,13 +19,14 @@ class PriceFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = FragmentPriceBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         setupViewModel()
         setupMore()
-
-        return binding.root
     }
 
     private fun setupViewModel() {
@@ -33,12 +34,38 @@ class PriceFragment : Fragment() {
     }
 
     private fun setupMore(){
-//        val priceFragment = PriceFragment()
-//        val detailPriceActivity = DetailPriceActivity()
+        binding.ibChicken.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
 
+        binding.ibBeef.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        binding.ibEgg.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        binding.ibShallot.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        binding.ibGarlic.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        binding.ibRedChilli.setOnClickListener{
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
 
         binding.ibMore.setOnClickListener{
-            val intent = Intent(activity, DetailPriceActivity::class.java)
+            val intent = Intent(activity, MorePriceActivity::class.java)
             activity?.startActivity(intent)
 
 //            childFragmentManager.beginTransaction().apply {
