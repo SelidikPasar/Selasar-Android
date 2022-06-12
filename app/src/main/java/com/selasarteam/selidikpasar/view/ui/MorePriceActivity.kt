@@ -6,62 +6,66 @@ import androidx.appcompat.app.AppCompatActivity
 import com.selasarteam.selidikpasar.databinding.ActivityMorePriceBinding
 
 class MorePriceActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityMorePriceBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupView()
+        ingredientsDetail()
+    }
+    private fun setupView() {
         binding = ActivityMorePriceBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        ingredientsDetail()
     }
 
     private fun ingredientsDetail() {
-        binding.btnRice.setOnClickListener {
+        binding.tbRice.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnChicken.setOnClickListener {
+        binding.tbChicken.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnBeef.setOnClickListener {
+        binding.tbBeef.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnEgg.setOnClickListener {
+        binding.tbEgg.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnShallot.setOnClickListener {
+        binding.tbShallot.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnGarlic.setOnClickListener {
+        binding.tbGarlic.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnRedchilli.setOnClickListener {
+        binding.tbRedChilli.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnCayenne.setOnClickListener {
+        binding.tbCayyene.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnOil.setOnClickListener {
+        binding.tbOil.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnSugar.setOnClickListener {
+        binding.tbSugar.setOnClickListener {
             val intent = Intent(this, DetailPriceActivity::class.java)
             startActivity(intent)
         }

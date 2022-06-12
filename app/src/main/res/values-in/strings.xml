@@ -43,7 +43,7 @@
     <string name="not_registered">Anda belum terdaftar?</string>
     <string name="register_here">Daftar disini!</string>
     <string name="error_response">"Terjadi kesalahan, "</string>
-    <string name="title_detail">Detail Berita</string>
+    <string name="title_detail">Detail Ringkasan</string>
     <string name="read_more">Baca Selengkapnya</string>
     <string name="not_login">Belum Masuk</string>
     <string name="register_first">Anda tidak dapat mengakses fitur ini karena belum mendaftarkan akun. Silakan daftar terlebih dahulu!</string>

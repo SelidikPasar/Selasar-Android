@@ -7,26 +7,26 @@ import androidx.room.PrimaryKey
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-@Entity(tableName = "news")
+@Entity(tableName = "articles")
 class NewsEntity(
     @field:ColumnInfo(name = "title")
     @field:PrimaryKey
     val title: String,
 
-    @field:ColumnInfo(name = "description")
-    val description: String? = null,
+    @field:ColumnInfo(name = "summary")
+    val summary: String? = null,
 
     @field:ColumnInfo(name = "author")
     val author: String? = null,
 
-    @field:ColumnInfo(name = "publishedAt")
-    val publishedAt: String,
+    @field:ColumnInfo(name = "date")
+    val date: String,
 
-    @field:ColumnInfo(name = "content")
-    val content: String? = null,
+    @field:ColumnInfo(name = "predictedSummary")
+    val predictedSummary: String? = null,
 
-    @field:ColumnInfo(name = "urlToImage")
-    val urlToImage: String? = null,
+    @field:ColumnInfo(name = "image")
+    val image: String? = null,
 
     @field:ColumnInfo(name = "url")
     val url: String,

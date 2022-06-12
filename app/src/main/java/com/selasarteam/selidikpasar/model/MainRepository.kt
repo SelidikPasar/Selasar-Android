@@ -77,9 +77,9 @@ class MainRepository private constructor(
                 _showLoading.value = false
                 if (response.isSuccessful) {
                     _registerResponse.value = responseBody
-                    _showMessage.value = Event("${response.message()}, $message")
+                    _showMessage.value = Event("$message")
                 } else {
-                    _showMessage.value = Event("${response.message()}, $message")
+                    _showMessage.value = Event("$message")
                     Log.e(TAG, "onFailure: ${response.message()}, $message")
                 }
             }
@@ -107,9 +107,9 @@ class MainRepository private constructor(
                 _showLoading.value = false
                 if (response.isSuccessful) {
                     _loginResponse.value = responseBody
-                    _showMessage.value = Event("${response.message()}, $message")
+                    _showMessage.value = Event("$message")
                 } else {
-                    _showMessage.value = Event("${response.message()}, $message")
+                    _showMessage.value = Event("$message")
                     Log.e(TAG, "onFailure: ${response.message()}, $message")
                 }
             }

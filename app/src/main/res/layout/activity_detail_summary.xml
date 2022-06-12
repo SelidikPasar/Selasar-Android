@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.ui.DetailNewsActivity">
+    tools:context=".view.ui.DetailSummaryActivity">
 
     <ImageView
         android:id="@+id/iv_photo_detail"
@@ -39,18 +39,18 @@
         android:layout_height="wrap_content"
         android:layout_marginVertical="12dp"
         android:transitionName="date"
-        app:layout_constraintBottom_toTopOf="@id/tv_news_detail"
+        app:layout_constraintBottom_toTopOf="@id/tv_summary_detail"
         app:layout_constraintEnd_toEndOf="@id/tv_title_detail"
         app:layout_constraintStart_toStartOf="@id/tv_title_detail"
         app:layout_constraintTop_toBottomOf="@id/tv_title_detail"
         tools:text="@tools:sample/date/ddmmyy" />
 
     <TextView
-        android:id="@+id/tv_news_detail"
+        android:id="@+id/tv_summary_detail"
         style="@style/TextStyle.DESCRIPTION"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:transitionName="news"
+        android:transitionName="articles"
         app:layout_constraintBottom_toTopOf="@id/tv_author_detail"
         app:layout_constraintEnd_toEndOf="@id/tv_date_detail"
         app:layout_constraintStart_toStartOf="@id/tv_date_detail"
@@ -64,8 +64,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         app:layout_constraintBottom_toTopOf="@id/btn_read_more"
-        app:layout_constraintStart_toStartOf="@id/tv_news_detail"
-        app:layout_constraintTop_toBottomOf="@id/tv_news_detail"
+        app:layout_constraintStart_toStartOf="@id/tv_summary_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_summary_detail"
         tools:text="@string/source" />
 
     <Button

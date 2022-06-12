@@ -37,14 +37,14 @@ public final class NewsDatabase_Impl extends NewsDatabase {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `news` (`title` TEXT NOT NULL, `description` TEXT, `author` TEXT, `publishedAt` TEXT NOT NULL, `content` TEXT, `urlToImage` TEXT, `url` TEXT NOT NULL, PRIMARY KEY(`title`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `articles` (`title` TEXT NOT NULL, `summary` TEXT, `author` TEXT, `date` TEXT NOT NULL, `predictedSummary` TEXT, `image` TEXT, `url` TEXT NOT NULL, PRIMARY KEY(`title`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '338e246f0f8a937a03b35d0b9b154057')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c695ed895d1f6b3d1f7df7cfb9dcd5dd')");
       }
 
       @Override
       public void dropAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("DROP TABLE IF EXISTS `news`");
+        _db.execSQL("DROP TABLE IF EXISTS `articles`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -83,26 +83,26 @@ public final class NewsDatabase_Impl extends NewsDatabase {
 
       @Override
       protected RoomOpenHelper.ValidationResult onValidateSchema(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsNews = new HashMap<String, TableInfo.Column>(7);
-        _columnsNews.put("title", new TableInfo.Column("title", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("description", new TableInfo.Column("description", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("author", new TableInfo.Column("author", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("publishedAt", new TableInfo.Column("publishedAt", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("content", new TableInfo.Column("content", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("urlToImage", new TableInfo.Column("urlToImage", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsNews.put("url", new TableInfo.Column("url", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        final HashSet<TableInfo.ForeignKey> _foreignKeysNews = new HashSet<TableInfo.ForeignKey>(0);
-        final HashSet<TableInfo.Index> _indicesNews = new HashSet<TableInfo.Index>(0);
-        final TableInfo _infoNews = new TableInfo("news", _columnsNews, _foreignKeysNews, _indicesNews);
-        final TableInfo _existingNews = TableInfo.read(_db, "news");
-        if (! _infoNews.equals(_existingNews)) {
-          return new RoomOpenHelper.ValidationResult(false, "news(com.selasarteam.selidikpasar.model.local.entity.NewsEntity).\n"
-                  + " Expected:\n" + _infoNews + "\n"
-                  + " Found:\n" + _existingNews);
+        final HashMap<String, TableInfo.Column> _columnsArticles = new HashMap<String, TableInfo.Column>(7);
+        _columnsArticles.put("title", new TableInfo.Column("title", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("summary", new TableInfo.Column("summary", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("author", new TableInfo.Column("author", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("date", new TableInfo.Column("date", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("predictedSummary", new TableInfo.Column("predictedSummary", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("image", new TableInfo.Column("image", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsArticles.put("url", new TableInfo.Column("url", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysArticles = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesArticles = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoArticles = new TableInfo("articles", _columnsArticles, _foreignKeysArticles, _indicesArticles);
+        final TableInfo _existingArticles = TableInfo.read(_db, "articles");
+        if (! _infoArticles.equals(_existingArticles)) {
+          return new RoomOpenHelper.ValidationResult(false, "articles(com.selasarteam.selidikpasar.model.local.entity.NewsEntity).\n"
+                  + " Expected:\n" + _infoArticles + "\n"
+                  + " Found:\n" + _existingArticles);
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "338e246f0f8a937a03b35d0b9b154057", "3e31d0fac5008bc8c1a6aeddfe7f96dc");
+    }, "c695ed895d1f6b3d1f7df7cfb9dcd5dd", "0579a78914d88f42314238ebd0f89339");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -115,7 +115,7 @@ public final class NewsDatabase_Impl extends NewsDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "news");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "articles");
   }
 
   @Override
@@ -124,7 +124,7 @@ public final class NewsDatabase_Impl extends NewsDatabase {
     final SupportSQLiteDatabase _db = super.getOpenHelper().getWritableDatabase();
     try {
       super.beginTransaction();
-      _db.execSQL("DELETE FROM `news`");
+      _db.execSQL("DELETE FROM `articles`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();

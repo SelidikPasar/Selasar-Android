@@ -7,13 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.selasarteam.selidikpasar.R
+import com.selasarteam.selidikpasar.databinding.ActivityDetailSummaryBinding
 import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
-import com.selasarteam.selidikpasar.databinding.ActivityDetailNewsBinding
-import com.selasarteam.selidikpasar.utils.DateFormatter
 
-class DetailNewsActivity : AppCompatActivity() {
+class DetailSummaryActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailNewsBinding
+    private lateinit var binding: ActivityDetailSummaryBinding
     private var url: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +23,7 @@ class DetailNewsActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
-        binding = ActivityDetailNewsBinding.inflate(layoutInflater)
+        binding = ActivityDetailSummaryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.apply {
@@ -37,11 +36,11 @@ class DetailNewsActivity : AppCompatActivity() {
         val data = intent.getParcelableExtra<NewsEntity>(EXTRA_DATA) as NewsEntity
         binding.apply {
             tvTitleDetail.text = data.title
-            tvNewsDetail.text = data.content
-            tvDateDetail.text = DateFormatter.formatDate(data.publishedAt)
+            tvSummaryDetail.text = data.predictedSummary
+            tvDateDetail.text = data.date
             (getString(R.string.source) + data.author).also { tvAuthorDetail.text = it }
-            Glide.with(this@DetailNewsActivity)
-                .load(data.urlToImage)
+            Glide.with(this@DetailSummaryActivity)
+                .load(data.image)
                 .fitCenter()
                 .apply(
                     RequestOptions

@@ -6,7 +6,7 @@ import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 
 @Dao
 interface NewsDao {
-    @Query("SELECT * FROM news ORDER BY publishedAt DESC")
+    @Query("SELECT * FROM articles ORDER BY date DESC")
     fun getNews(): LiveData<List<NewsEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -15,6 +15,6 @@ interface NewsDao {
     @Update
     suspend fun updateNews(news: NewsEntity)
 
-    @Query("DELETE FROM news")
+    @Query("DELETE FROM articles")
     suspend fun deleteAll()
 }

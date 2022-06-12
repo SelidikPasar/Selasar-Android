@@ -28,6 +28,6 @@ data class ArticlesItem(
     @field:SerializedName("url")
     val url: String,
 
-    @field:SerializedName("predicted summary")
+    @field:SerializedName("predictedSummary")
     val predictedSummary: String? = null
 )

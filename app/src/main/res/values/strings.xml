@@ -47,7 +47,7 @@
     <string name="not_registered">Not registered yet?</string>
     <string name="register_here">Register here!</string>
     <string name="error_response">"Something wrong, "</string>
-    <string name="title_detail">Details News</string>
+    <string name="title_detail">Detail Summary</string>
     <string name="read_more">Read More</string>
     <string name="register_first">You cannot access this feature because you haven\'t registered an account. Please register first!</string>
     <string name="already_have_an_account">Already have an account?</string>

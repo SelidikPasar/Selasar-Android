@@ -21,7 +21,7 @@ abstract class NewsDatabase : RoomDatabase() {
             instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
-                    NewsDatabase::class.java, "News.db"
+                    NewsDatabase::class.java, "Selasar.db"
                 ).build()
             }
     }

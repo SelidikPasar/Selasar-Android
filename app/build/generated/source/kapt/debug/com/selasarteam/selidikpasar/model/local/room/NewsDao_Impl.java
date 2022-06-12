@@ -40,7 +40,7 @@ public final class NewsDao_Impl implements NewsDao {
     this.__insertionAdapterOfNewsEntity = new EntityInsertionAdapter<NewsEntity>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR IGNORE INTO `news` (`title`,`description`,`author`,`publishedAt`,`content`,`urlToImage`,`url`) VALUES (?,?,?,?,?,?,?)";
+        return "INSERT OR IGNORE INTO `articles` (`title`,`summary`,`author`,`date`,`predictedSummary`,`image`,`url`) VALUES (?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -50,30 +50,30 @@ public final class NewsDao_Impl implements NewsDao {
         } else {
           stmt.bindString(1, value.getTitle());
         }
-        if (value.getDescription() == null) {
+        if (value.getSummary() == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.getDescription());
+          stmt.bindString(2, value.getSummary());
         }
         if (value.getAuthor() == null) {
           stmt.bindNull(3);
         } else {
           stmt.bindString(3, value.getAuthor());
         }
-        if (value.getPublishedAt() == null) {
+        if (value.getDate() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getPublishedAt());
+          stmt.bindString(4, value.getDate());
         }
-        if (value.getContent() == null) {
+        if (value.getPredictedSummary() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getContent());
+          stmt.bindString(5, value.getPredictedSummary());
         }
-        if (value.getUrlToImage() == null) {
+        if (value.getImage() == null) {
           stmt.bindNull(6);
         } else {
-          stmt.bindString(6, value.getUrlToImage());
+          stmt.bindString(6, value.getImage());
         }
         if (value.getUrl() == null) {
           stmt.bindNull(7);
@@ -85,7 +85,7 @@ public final class NewsDao_Impl implements NewsDao {
     this.__updateAdapterOfNewsEntity = new EntityDeletionOrUpdateAdapter<NewsEntity>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `news` SET `title` = ?,`description` = ?,`author` = ?,`publishedAt` = ?,`content` = ?,`urlToImage` = ?,`url` = ? WHERE `title` = ?";
+        return "UPDATE OR ABORT `articles` SET `title` = ?,`summary` = ?,`author` = ?,`date` = ?,`predictedSummary` = ?,`image` = ?,`url` = ? WHERE `title` = ?";
       }
 
       @Override
@@ -95,30 +95,30 @@ public final class NewsDao_Impl implements NewsDao {
         } else {
           stmt.bindString(1, value.getTitle());
         }
-        if (value.getDescription() == null) {
+        if (value.getSummary() == null) {
           stmt.bindNull(2);
         } else {
-          stmt.bindString(2, value.getDescription());
+          stmt.bindString(2, value.getSummary());
         }
         if (value.getAuthor() == null) {
           stmt.bindNull(3);
         } else {
           stmt.bindString(3, value.getAuthor());
         }
-        if (value.getPublishedAt() == null) {
+        if (value.getDate() == null) {
           stmt.bindNull(4);
         } else {
-          stmt.bindString(4, value.getPublishedAt());
+          stmt.bindString(4, value.getDate());
         }
-        if (value.getContent() == null) {
+        if (value.getPredictedSummary() == null) {
           stmt.bindNull(5);
         } else {
-          stmt.bindString(5, value.getContent());
+          stmt.bindString(5, value.getPredictedSummary());
         }
-        if (value.getUrlToImage() == null) {
+        if (value.getImage() == null) {
           stmt.bindNull(6);
         } else {
-          stmt.bindString(6, value.getUrlToImage());
+          stmt.bindString(6, value.getImage());
         }
         if (value.getUrl() == null) {
           stmt.bindNull(7);
@@ -135,7 +135,7 @@ public final class NewsDao_Impl implements NewsDao {
     this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
       @Override
       public String createQuery() {
-        final String _query = "DELETE FROM news";
+        final String _query = "DELETE FROM articles";
         return _query;
       }
     };
@@ -197,19 +197,19 @@ public final class NewsDao_Impl implements NewsDao {
 
   @Override
   public LiveData<List<NewsEntity>> getNews() {
-    final String _sql = "SELECT * FROM news ORDER BY publishedAt DESC";
+    final String _sql = "SELECT * FROM articles ORDER BY date DESC";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
-    return __db.getInvalidationTracker().createLiveData(new String[]{"news"}, false, new Callable<List<NewsEntity>>() {
+    return __db.getInvalidationTracker().createLiveData(new String[]{"articles"}, false, new Callable<List<NewsEntity>>() {
       @Override
       public List<NewsEntity> call() throws Exception {
         final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
         try {
           final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
-          final int _cursorIndexOfDescription = CursorUtil.getColumnIndexOrThrow(_cursor, "description");
+          final int _cursorIndexOfSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "summary");
           final int _cursorIndexOfAuthor = CursorUtil.getColumnIndexOrThrow(_cursor, "author");
-          final int _cursorIndexOfPublishedAt = CursorUtil.getColumnIndexOrThrow(_cursor, "publishedAt");
-          final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
-          final int _cursorIndexOfUrlToImage = CursorUtil.getColumnIndexOrThrow(_cursor, "urlToImage");
+          final int _cursorIndexOfDate = CursorUtil.getColumnIndexOrThrow(_cursor, "date");
+          final int _cursorIndexOfPredictedSummary = CursorUtil.getColumnIndexOrThrow(_cursor, "predictedSummary");
+          final int _cursorIndexOfImage = CursorUtil.getColumnIndexOrThrow(_cursor, "image");
           final int _cursorIndexOfUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "url");
           final List<NewsEntity> _result = new ArrayList<NewsEntity>(_cursor.getCount());
           while(_cursor.moveToNext()) {
@@ -220,11 +220,11 @@ public final class NewsDao_Impl implements NewsDao {
             } else {
               _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
             }
-            final String _tmpDescription;
-            if (_cursor.isNull(_cursorIndexOfDescription)) {
-              _tmpDescription = null;
+            final String _tmpSummary;
+            if (_cursor.isNull(_cursorIndexOfSummary)) {
+              _tmpSummary = null;
             } else {
-              _tmpDescription = _cursor.getString(_cursorIndexOfDescription);
+              _tmpSummary = _cursor.getString(_cursorIndexOfSummary);
             }
             final String _tmpAuthor;
             if (_cursor.isNull(_cursorIndexOfAuthor)) {
@@ -232,23 +232,23 @@ public final class NewsDao_Impl implements NewsDao {
             } else {
               _tmpAuthor = _cursor.getString(_cursorIndexOfAuthor);
             }
-            final String _tmpPublishedAt;
-            if (_cursor.isNull(_cursorIndexOfPublishedAt)) {
-              _tmpPublishedAt = null;
+            final String _tmpDate;
+            if (_cursor.isNull(_cursorIndexOfDate)) {
+              _tmpDate = null;
             } else {
-              _tmpPublishedAt = _cursor.getString(_cursorIndexOfPublishedAt);
+              _tmpDate = _cursor.getString(_cursorIndexOfDate);
             }
-            final String _tmpContent;
-            if (_cursor.isNull(_cursorIndexOfContent)) {
-              _tmpContent = null;
+            final String _tmpPredictedSummary;
+            if (_cursor.isNull(_cursorIndexOfPredictedSummary)) {
+              _tmpPredictedSummary = null;
             } else {
-              _tmpContent = _cursor.getString(_cursorIndexOfContent);
+              _tmpPredictedSummary = _cursor.getString(_cursorIndexOfPredictedSummary);
             }
-            final String _tmpUrlToImage;
-            if (_cursor.isNull(_cursorIndexOfUrlToImage)) {
-              _tmpUrlToImage = null;
+            final String _tmpImage;
+            if (_cursor.isNull(_cursorIndexOfImage)) {
+              _tmpImage = null;
             } else {
-              _tmpUrlToImage = _cursor.getString(_cursorIndexOfUrlToImage);
+              _tmpImage = _cursor.getString(_cursorIndexOfImage);
             }
             final String _tmpUrl;
             if (_cursor.isNull(_cursorIndexOfUrl)) {
@@ -256,7 +256,7 @@ public final class NewsDao_Impl implements NewsDao {
             } else {
               _tmpUrl = _cursor.getString(_cursorIndexOfUrl);
             }
-            _item = new NewsEntity(_tmpTitle,_tmpDescription,_tmpAuthor,_tmpPublishedAt,_tmpContent,_tmpUrlToImage,_tmpUrl);
+            _item = new NewsEntity(_tmpTitle,_tmpSummary,_tmpAuthor,_tmpDate,_tmpPredictedSummary,_tmpImage,_tmpUrl);
             _result.add(_item);
           }
           return _result;

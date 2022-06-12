@@ -6,277 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.MorePriceActivity">
 
-    <ImageView
-        android:id="@+id/image_detail_rice"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_rice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_rice"
-        app:srcCompat="@drawable/slsr_detail_rice"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_chicken"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_chicken"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_chicken"
-        app:srcCompat="@drawable/slsr_detail_chicken"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_beef"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_beef"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_beef"
-        app:srcCompat="@drawable/slsr_detail_beef"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_egg"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_egg"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_egg"
-        app:srcCompat="@drawable/slsr_detail_egg"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_shallot"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_shallot"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_shallot"
-        app:srcCompat="@drawable/slsr_detail_shallot"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_garlic"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_garlic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_garlic"
-        app:srcCompat="@drawable/slsr_detail_garlic"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_chilli"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_redchilli"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_redchilli"
-        app:srcCompat="@drawable/slsr_detail_chilli"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_cayanne"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_cayenne"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_redchilli"
-        app:srcCompat="@drawable/slsr_detail_cayanne"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_oil"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_oil"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btn_oil"
-        app:srcCompat="@drawable/slsr_detail_oil"
-        android:contentDescription="@string/icons" />
-
-    <ImageView
-        android:id="@+id/image_detail_sugar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_sugar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_oil"
-        app:srcCompat="@drawable/slsr_detail_sugar"
-        android:contentDescription="@string/icons" />
-
-    <Button
-        android:id="@+id/btn_rice"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_rice"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/rice"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_rice"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_rice"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_chicken"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btn_chicken"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_chicken"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/chicken"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_chicken"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_chicken"
-        app:layout_constraintTop_toBottomOf="@+id/btn_rice" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_beef"
+        app:layout_constraintTop_toBottomOf="@id/tb_rice" />
 
-    <Button
-        android:id="@+id/btn_beef"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_beef"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/beef"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_beef"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_beef"
-        app:layout_constraintTop_toBottomOf="@+id/btn_chicken" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_egg"
+        app:layout_constraintTop_toBottomOf="@id/tb_chicken" />
 
-    <Button
-        android:id="@+id/btn_egg"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_egg"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/egg"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_egg"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_egg"
-        app:layout_constraintTop_toBottomOf="@+id/btn_beef" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_shallot"
+        app:layout_constraintTop_toBottomOf="@id/tb_beef" />
 
-    <Button
-        android:id="@+id/btn_shallot"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_shallot"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/shallot"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_shallot"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_shallot"
-        app:layout_constraintTop_toBottomOf="@+id/btn_egg" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_garlic"
+        app:layout_constraintTop_toBottomOf="@id/tb_egg" />
 
-    <Button
-        android:id="@+id/btn_garlic"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_garlic"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/garlic"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_garlic"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_garlic"
-        app:layout_constraintTop_toBottomOf="@+id/btn_shallot" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_red_chilli"
+        app:layout_constraintTop_toBottomOf="@id/tb_shallot" />
 
-    <Button
-        android:id="@+id/btn_redchilli"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_red_chilli"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/red_chilli"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_chilli"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_chilli"
-        app:layout_constraintTop_toBottomOf="@+id/btn_garlic" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_cayyene"
+        app:layout_constraintTop_toBottomOf="@id/tb_garlic" />
 
-    <Button
-        android:id="@+id/btn_cayenne"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_cayyene"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/cayenne_pepper"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_cayanne"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_cayanne"
-        app:layout_constraintTop_toBottomOf="@+id/btn_redchilli" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_oil"
+        app:layout_constraintTop_toBottomOf="@id/tb_red_chilli" />
 
-    <Button
-        android:id="@+id/btn_oil"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_oil"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/cooking_oil"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_oil"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_oil"
-        app:layout_constraintTop_toBottomOf="@+id/btn_cayenne" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tb_sugar"
+        app:layout_constraintTop_toBottomOf="@id/tb_cayyene" />
 
-    <Button
-        android:id="@+id/btn_sugar"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tb_sugar"
         style="@style/Widget.Material3.Button.TextButton"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        android:fontFamily="@font/sarabun_regular"
         android:text="@string/sugar"
-        android:textAlignment="textStart"
-        android:textColor="@color/md_theme_light_text"
-        android:textSize="18sp"
+        app:icon="@drawable/ic_sugar"
+        android:layout_margin="6dp"
+        app:iconSize="40dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/image_detail_sugar"
-        app:layout_constraintTop_toBottomOf="@+id/btn_oil" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tb_oil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

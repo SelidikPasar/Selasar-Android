@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/price_fragment"
@@ -7,262 +7,281 @@
     android:layout_height="match_parent"
     tools:context=".view.ui.PriceFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/iv_highlight_1"
+        android:layout_width="420dp"
+        android:layout_height="250dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
-            android:id="@+id/iv_highlight_1"
-            android:layout_width="420dp"
-            android:layout_height="250dp"
-            android:contentDescription="@string/highlight"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/backgrounds/scenic" />
+    <ImageView
+        android:id="@+id/iv_highlight_2"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
-            android:id="@+id/iv_highlight_2"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:contentDescription="@string/highlight"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/backgrounds/scenic" />
+    <ImageView
+        android:id="@+id/iv_highlight_3"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
-            android:id="@+id/iv_highlight_3"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:contentDescription="@string/highlight"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/backgrounds/scenic" />
+    <ImageView
+        android:id="@+id/iv_highlight_4"
+        android:layout_width="320dp"
+        android:layout_height="220dp"
+        android:contentDescription="@string/highlight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:src="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
-            android:id="@+id/iv_highlight_4"
-            android:layout_width="320dp"
-            android:layout_height="220dp"
-            android:contentDescription="@string/highlight"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:src="@tools:sample/backgrounds/scenic" />
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="24dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@id/ic_highlight_2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_highlight_1"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/ic_highlight_1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="140dp"
-            android:layout_marginTop="24dp"
-            app:altSrc="@drawable/ic_circle_full"
-            app:layout_constraintEnd_toStartOf="@id/ic_highlight_2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_highlight_1"
-            app:srcCompat="@drawable/ic_circle_blank"
-            app:tint="@color/md_theme_dark_primary" />
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@+id/ic_highlight_3"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_1"
+        app:layout_constraintTop_toTopOf="@id/ic_highlight_1"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/ic_highlight_2"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:altSrc="@drawable/ic_circle_full"
-            app:layout_constraintEnd_toStartOf="@+id/ic_highlight_3"
-            app:layout_constraintStart_toEndOf="@id/ic_highlight_1"
-            app:layout_constraintTop_toTopOf="@id/ic_highlight_1"
-            app:srcCompat="@drawable/ic_circle_blank"
-            app:tint="@color/md_theme_dark_primary" />
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@id/ic_highlight_4"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_2"
+        app:layout_constraintTop_toTopOf="@+id/ic_highlight_2"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/ic_highlight_3"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            app:altSrc="@drawable/ic_circle_full"
-            app:layout_constraintEnd_toStartOf="@id/ic_highlight_4"
-            app:layout_constraintStart_toEndOf="@id/ic_highlight_2"
-            app:layout_constraintTop_toTopOf="@+id/ic_highlight_2"
-            app:srcCompat="@drawable/ic_circle_blank"
-            app:tint="@color/md_theme_dark_primary" />
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/ic_highlight_4"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="140dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ic_highlight_3"
+        app:layout_constraintTop_toTopOf="@id/ic_highlight_3"
+        app:srcCompat="@drawable/ic_circle_blank"
+        app:tint="@color/md_theme_dark_primary" />
 
-        <androidx.constraintlayout.utils.widget.ImageFilterView
-            android:id="@+id/ic_highlight_4"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginEnd="140dp"
-            app:altSrc="@drawable/ic_circle_full"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ic_highlight_3"
-            app:layout_constraintTop_toTopOf="@id/ic_highlight_3"
-            app:srcCompat="@drawable/ic_circle_blank"
-            app:tint="@color/md_theme_dark_primary" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_rice"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_rice"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ic_highlight_1" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_rice"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="70dp"
-            android:background="@drawable/slsr_icon_rice"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ic_highlight_1" />
+    <TextView
+        android:id="@+id/tv_rice"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/rice"
+        app:layout_constraintEnd_toEndOf="@id/ib_rice"
+        app:layout_constraintStart_toStartOf="@id/ib_rice"
+        app:layout_constraintTop_toBottomOf="@id/ib_rice" />
 
-        <TextView
-            android:id="@+id/tv_rice"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/rice"
-            app:layout_constraintEnd_toEndOf="@id/ib_rice"
-            app:layout_constraintStart_toStartOf="@id/ib_rice"
-            app:layout_constraintTop_toBottomOf="@id/ib_rice" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_chicken"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_chicken"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toEndOf="@id/ib_rice"
+        app:layout_constraintTop_toTopOf="@id/ib_rice" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_chicken"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/slsr_icon_chicken"
-            app:layout_constraintStart_toEndOf="@id/ib_rice"
-            app:layout_constraintTop_toTopOf="@id/ib_rice" />
+    <TextView
+        android:id="@+id/tv_chicken"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/chicken"
+        app:layout_constraintEnd_toEndOf="@id/ib_chicken"
+        app:layout_constraintStart_toStartOf="@id/ib_chicken"
+        app:layout_constraintTop_toBottomOf="@id/ib_chicken" />
 
-        <TextView
-            android:id="@+id/tv_chicken"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/chicken"
-            app:layout_constraintEnd_toEndOf="@id/ib_chicken"
-            app:layout_constraintStart_toStartOf="@id/ib_chicken"
-            app:layout_constraintTop_toBottomOf="@id/ib_chicken" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_beef"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_beef"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toEndOf="@id/ib_chicken"
+        app:layout_constraintTop_toTopOf="@id/ib_chicken" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_beef"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="24dp"
-            android:background="@drawable/slsr_icon_beef"
-            app:layout_constraintStart_toEndOf="@id/ib_chicken"
-            app:layout_constraintTop_toTopOf="@id/ib_chicken" />
+    <TextView
+        android:id="@+id/tv_beef"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/beef"
+        app:layout_constraintEnd_toEndOf="@id/ib_beef"
+        app:layout_constraintStart_toStartOf="@id/ib_beef"
+        app:layout_constraintTop_toBottomOf="@id/ib_beef" />
 
-        <TextView
-            android:id="@+id/tv_beef"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/beef"
-            app:layout_constraintEnd_toEndOf="@id/ib_beef"
-            app:layout_constraintStart_toStartOf="@id/ib_beef"
-            app:layout_constraintTop_toBottomOf="@id/ib_beef" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_egg"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_egg"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ib_beef"
+        app:layout_constraintTop_toTopOf="@id/ib_beef" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_egg"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="24dp"
-            android:background="@drawable/slsr_icon_eggs"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/ib_beef"
-            app:layout_constraintTop_toTopOf="@id/ib_beef" />
+    <TextView
+        android:id="@+id/tv_egg"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/egg"
+        app:layout_constraintEnd_toEndOf="@id/ib_egg"
+        app:layout_constraintStart_toStartOf="@id/ib_egg"
+        app:layout_constraintTop_toBottomOf="@id/ib_egg" />
 
-        <TextView
-            android:id="@+id/tv_egg"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/egg"
-            app:layout_constraintEnd_toEndOf="@id/ib_egg"
-            app:layout_constraintStart_toStartOf="@id/ib_egg"
-            app:layout_constraintTop_toBottomOf="@id/ib_egg" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_shallot"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_shallot"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@id/ib_rice"
+        app:layout_constraintTop_toBottomOf="@id/tv_rice" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_shallot"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/slsr_icon_shallot"
-            app:layout_constraintStart_toStartOf="@id/ib_rice"
-            app:layout_constraintTop_toBottomOf="@id/tv_rice" />
+    <TextView
+        android:id="@+id/tv_shallot"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/shallot"
+        app:layout_constraintEnd_toEndOf="@id/ib_shallot"
+        app:layout_constraintStart_toStartOf="@id/ib_shallot"
+        app:layout_constraintTop_toBottomOf="@id/ib_shallot" />
 
-        <TextView
-            android:id="@+id/tv_shallot"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/shallot"
-            app:layout_constraintEnd_toEndOf="@id/ib_shallot"
-            app:layout_constraintStart_toStartOf="@id/ib_shallot"
-            app:layout_constraintTop_toBottomOf="@id/ib_shallot" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_garlic"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_garlic"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@id/ib_chicken"
+        app:layout_constraintTop_toTopOf="@id/ib_shallot" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_garlic"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/slsr_icon_garlic"
-            app:layout_constraintStart_toStartOf="@id/ib_chicken"
-            app:layout_constraintTop_toTopOf="@id/ib_shallot" />
+    <TextView
+        android:id="@+id/tv_garlic"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/garlic"
+        app:layout_constraintEnd_toEndOf="@id/ib_garlic"
+        app:layout_constraintStart_toStartOf="@id/ib_garlic"
+        app:layout_constraintTop_toBottomOf="@id/ib_garlic" />
 
-        <TextView
-            android:id="@+id/tv_garlic"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/garlic"
-            app:layout_constraintEnd_toEndOf="@id/ib_garlic"
-            app:layout_constraintStart_toStartOf="@id/ib_garlic"
-            app:layout_constraintTop_toBottomOf="@id/ib_garlic" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_red_chilli"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_chilli"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@id/ib_beef"
+        app:layout_constraintTop_toTopOf="@id/ib_garlic" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_red_chilli"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:background="@drawable/slsr_icon_chili"
-            app:layout_constraintStart_toStartOf="@id/ib_beef"
-            app:layout_constraintTop_toTopOf="@id/ib_garlic" />
+    <TextView
+        android:id="@+id/tv_red_chilli"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/red_chilli"
+        app:layout_constraintEnd_toEndOf="@id/ib_red_chilli"
+        app:layout_constraintStart_toStartOf="@id/ib_red_chilli"
+        app:layout_constraintTop_toBottomOf="@id/ib_red_chilli" />
 
-        <TextView
-            android:id="@+id/tv_red_chilli"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/red_chilli"
-            app:layout_constraintEnd_toEndOf="@id/ib_red_chilli"
-            app:layout_constraintStart_toStartOf="@id/ib_red_chilli"
-            app:layout_constraintTop_toBottomOf="@id/ib_red_chilli" />
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ib_more"
+        style="@style/Widget.Material3.MaterialTimePicker.ImageButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/bg_image_button"
+        android:src="@drawable/ic_more"
+        android:tint="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@id/ib_egg"
+        app:layout_constraintTop_toTopOf="@id/ib_red_chilli" />
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/ib_more"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+    <TextView
+        android:id="@+id/tv_more"
+        style="@style/TextStyle.BUTTON"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        app:layout_constraintEnd_toEndOf="@id/ib_more"
+        app:layout_constraintStart_toStartOf="@id/ib_more"
+        app:layout_constraintTop_toBottomOf="@id/ib_more" />
 
-            android:background="@drawable/slsr_icon_more"
-            app:layout_constraintStart_toStartOf="@id/ib_egg"
-            app:layout_constraintTop_toTopOf="@id/ib_red_chilli" />
+    <TextView
+        style="@style/TextStyle.DESCRIPTION"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="680dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_highlight_1" />
 
-        <TextView
-            android:id="@+id/tv_more"
-            style="@style/TextStyle.BUTTON"
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/more"
-            app:layout_constraintEnd_toEndOf="@id/ib_more"
-            app:layout_constraintStart_toStartOf="@id/ib_more"
-            app:layout_constraintTop_toBottomOf="@id/ib_more" />
-
-        <TextView
-            style="@style/TextStyle.DESCRIPTION"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="680dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/iv_highlight_1" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
