@@ -52,6 +52,14 @@ class CustomEditText : TextInputEditText {
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 val input = p0.toString()
                 when (inputType) {
+                    TEXT -> {
+                        isError = if (input.length < 3) {
+                            setError(context.getString(R.string.name_length), null)
+                            true
+                        } else {
+                            false
+                        }
+                    }
                     EMAIL -> {
                         if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
                             error = context.getString(R.string.email_validation)
@@ -74,6 +82,14 @@ class CustomEditText : TextInputEditText {
             override fun afterTextChanged(p0: Editable?) {
                 val input = p0.toString()
                 when (inputType) {
+                    TEXT -> {
+                        isError = if (input.length < 3) {
+                            setError(context.getString(R.string.name_length), null)
+                            true
+                        } else {
+                            false
+                        }
+                    }
                     EMAIL -> {
                         if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
                             error = context.getString(R.string.email_validation)
@@ -96,6 +112,7 @@ class CustomEditText : TextInputEditText {
     }
 
     companion object {
+        const val TEXT = 0x00000001
         const val EMAIL = 0x00000021
         const val PASSWORD = 0x00000081
     }

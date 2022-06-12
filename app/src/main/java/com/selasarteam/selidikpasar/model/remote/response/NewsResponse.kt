@@ -4,29 +4,23 @@ import com.google.gson.annotations.SerializedName
 
 data class NewsResponse(
 
-    @field:SerializedName("totalResults")
-    val totalResults: Int,
-
     @field:SerializedName("articles")
     val articles: List<ArticlesItem>,
-
-    @field:SerializedName("status")
-    val status: String
 )
 
 data class ArticlesItem(
 
-    @field:SerializedName("publishedAt")
-    val publishedAt: String,
+    @field:SerializedName("date")
+    val date: String,
 
-    @field:SerializedName("author")
-    val author: String? = null,
+    @field:SerializedName("source")
+    val source: String? = null,
 
-    @field:SerializedName("urlToImage")
-    val urlToImage: String? = null,
+    @field:SerializedName("image")
+    val image: String? = null,
 
-    @field:SerializedName("description")
-    val description: String? = null,
+    @field:SerializedName("summary")
+    val summary: String? = null,
 
     @field:SerializedName("title")
     val title: String,
@@ -34,6 +28,6 @@ data class ArticlesItem(
     @field:SerializedName("url")
     val url: String,
 
-    @field:SerializedName("content")
-    val content: String? = null
+    @field:SerializedName("predicted summary")
+    val predictedSummary: String? = null
 )

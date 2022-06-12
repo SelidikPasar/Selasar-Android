@@ -44,6 +44,8 @@
     <string name="or">Or</string>
     <string name="icons">Icons</string>
     <string name="retry">Retry</string>
-    <string name="author">"Author: "</string>
+    <string name="source">"Source: "</string>
     <string name="required_field">This field is required</string>
+    <string name="required_cb"><![CDATA[You have to agree with our terms & conditions]]></string>
+    <string name="name_length">Name can\'t be less than 3 character!</string>
 </resources>

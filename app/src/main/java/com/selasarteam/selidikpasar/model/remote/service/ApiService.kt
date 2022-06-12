@@ -20,4 +20,11 @@ interface ApiService {
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<UserResponse>
+
+    @FormUrlEncoded
+    @POST("login")
+    fun postLogin(
+        @Field("email") email: String,
+        @Field("password") password: String
+    ): Call<UserResponse>
 }
