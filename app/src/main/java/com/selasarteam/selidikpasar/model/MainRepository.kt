@@ -2,15 +2,15 @@ package com.selasarteam.selidikpasar.model
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.selasarteam.selidikpasar.model.local.datastore.MarketModel
 import com.selasarteam.selidikpasar.model.local.datastore.SessionModel
+import com.selasarteam.selidikpasar.model.local.datastore.SessionPreferences
 import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.model.local.room.NewsDao
-import com.selasarteam.selidikpasar.model.remote.service.ApiService
-import com.selasarteam.selidikpasar.utils.Result
-import com.selasarteam.selidikpasar.model.local.datastore.SessionPreferences
+import com.selasarteam.selidikpasar.model.remote.response.MarketResponse
 import com.selasarteam.selidikpasar.model.remote.response.UserResponse
+import com.selasarteam.selidikpasar.model.remote.service.ApiService
 import com.selasarteam.selidikpasar.utils.Event
+import com.selasarteam.selidikpasar.utils.Result
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,8 +20,8 @@ class MainRepository private constructor(
     private val preferences: SessionPreferences,
     private val apiService: ApiService
 ) {
-    private val _list = MutableLiveData<MarketModel>()
-    val list: LiveData<MarketModel> = _list
+    private val _list = MutableLiveData<MarketResponse>()
+    val list: LiveData<MarketResponse> = _list
 
     private val _registerResponse = MutableLiveData<UserResponse>()
     val registerResponse: LiveData<UserResponse> = _registerResponse
@@ -115,6 +115,34 @@ class MainRepository private constructor(
             }
 
             override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                _showLoading.value = false
+                _showMessage.value = Event(t.message.toString())
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    fun getMarketList(token: String) {
+        _showLoading.value = true
+        val client = apiService.getMarketList(token)
+
+        client.enqueue(object : Callback<MarketResponse> {
+            override fun onResponse(
+                call: Call<MarketResponse>,
+                response: Response<MarketResponse>
+            ) {
+                val responseBody = response.body()
+
+                _showLoading.value = false
+                if (response.isSuccessful) {
+                    _list.value = responseBody
+                } else {
+                    _showMessage.value = Event(response.message().toString())
+                    Log.e(TAG, "onFailure: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<MarketResponse>, t: Throwable) {
                 _showLoading.value = false
                 _showMessage.value = Event(t.message.toString())
                 Log.e(TAG, "onFailure: ${t.message.toString()}")

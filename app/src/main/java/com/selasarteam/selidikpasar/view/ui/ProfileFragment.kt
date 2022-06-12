@@ -119,12 +119,7 @@ class ProfileFragment : Fragment() {
             btnLogout.setOnClickListener { userLogout() }
 
             btnRegisterHere.setOnClickListener {
-                startActivity(
-                    Intent(
-                        requireActivity(),
-                        RegisterActivity::class.java
-                    )
-                )
+                startActivity(Intent(requireActivity(), RegisterActivity::class.java))
             }
         }
     }

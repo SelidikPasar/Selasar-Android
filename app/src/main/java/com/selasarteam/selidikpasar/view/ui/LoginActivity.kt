@@ -160,7 +160,7 @@ class LoginActivity : AppCompatActivity() {
                             displayName.toString(),
                             email.toString(),
                             photoUrl.toString(),
-                            idToken.toString(),
+                            AUTH_KEY + idToken.toString(),
                             true
                         )
                     )

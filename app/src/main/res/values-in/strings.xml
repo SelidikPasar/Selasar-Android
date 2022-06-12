@@ -61,4 +61,6 @@
     <string name="cayenne_pepper">Cabai Rawit</string>
     <string name="cooking_oil">Minyak Goreng</string>
     <string name="sugar">Gula</string>
+    <string name="address">"Alamat : "</string>
+    <string name="market">"Toko : "</string>
 </resources>

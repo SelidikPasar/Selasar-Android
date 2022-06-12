@@ -9,11 +9,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.ItemMarketBinding
-import com.selasarteam.selidikpasar.model.local.datastore.MarketModel
+import com.selasarteam.selidikpasar.model.remote.response.MarketItem
 import com.selasarteam.selidikpasar.view.adapter.ListMarketAdapter.ListViewHolder
 
 
-class ListMarketAdapter : ListAdapter<MarketModel, ListViewHolder>(DIFF_CALLBACK) {
+class ListMarketAdapter : ListAdapter<MarketItem, ListViewHolder>(DIFF_CALLBACK) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
         val binding =
             ItemMarketBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -27,37 +27,41 @@ class ListMarketAdapter : ListAdapter<MarketModel, ListViewHolder>(DIFF_CALLBACK
 
     class ListViewHolder(private val binding: ItemMarketBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(market: MarketModel) {
+
+        fun bind(market: MarketItem) {
             binding.apply {
-                (market.name ?: "-").also { tvTitleItem.text = it }
-                (market.address ?: "-").also { tvAddressItem.text = it }
+                tvTitleItem.text = market.name
+                tvAddressItem.text = market.address
                 Glide.with(itemView.context)
-                    .load(market.photo)
+                    .load(market.image)
+                    .centerCrop()
                     .apply(
                         RequestOptions
                             .placeholderOf(R.drawable.ic_image_loading)
                             .error(R.drawable.ic_broken_image)
                     )
                     .into(ivPhoto)
-
-                itemView.setOnClickListener {
-
-                }
             }
         }
     }
 
     companion object {
-        val DIFF_CALLBACK: DiffUtil.ItemCallback<MarketModel> =
-            object : DiffUtil.ItemCallback<MarketModel>() {
-                override fun areItemsTheSame(oldNews: MarketModel, newNews: MarketModel): Boolean {
+        val DIFF_CALLBACK: DiffUtil.ItemCallback<MarketItem> =
+            object : DiffUtil.ItemCallback<MarketItem>() {
+                override fun areItemsTheSame(
+                    oldNews: MarketItem,
+                    newNews: MarketItem
+                ): Boolean {
                     return oldNews.name == newNews.name
                 }
 
-                override fun areContentsTheSame(oldNews: MarketModel, newNews: MarketModel): Boolean {
+                override fun areContentsTheSame(
+                    oldNews: MarketItem,
+                    newNews: MarketItem
+                ): Boolean {
                     return oldNews.name == newNews.name &&
                             oldNews.address == newNews.address &&
-                            oldNews.photo == newNews.photo
+                            oldNews.image == newNews.image
                 }
             }
     }

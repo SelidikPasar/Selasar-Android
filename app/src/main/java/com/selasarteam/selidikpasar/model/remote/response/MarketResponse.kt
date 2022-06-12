@@ -20,8 +20,8 @@ data class MarketItem(
 	val name: String,
 
 	@field:SerializedName("lat")
-	val lat: Int,
+	val lat: Double,
 
 	@field:SerializedName("long")
-	val long: Int
+	val long: Double
 )

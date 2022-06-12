@@ -1,6 +1,7 @@
 package com.selasarteam.selidikpasar.view.ui
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -21,8 +22,13 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.net.PlacesClient
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.selasarteam.selidikpasar.BuildConfig
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentMarketplaceBinding
@@ -41,13 +47,17 @@ class MarketplaceFragment : Fragment() {
     private var locationPermissionGranted = false
     private val defaultLocation = LatLng(-6.241586, 106.992416)
 
-    private var map: GoogleMap? = null
+    private var gMap: GoogleMap? = null
     private var cameraPosition: CameraPosition? = null
     private var lastKnownLocation: Location? = null
 
     private lateinit var marketAdapter: ListMarketAdapter
     private lateinit var placesClient: PlacesClient
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
+
+    private var token = ""
+    private var auth: FirebaseAuth? = null
+    private var currentUser: FirebaseUser? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -67,6 +77,8 @@ class MarketplaceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupPermission()
         setupViewModel()
+        setupAction()
+        checkUserStatus()
         setupAdapter()
         setupMaps()
         setupList()
@@ -84,6 +96,53 @@ class MarketplaceFragment : Fragment() {
         factory = ViewModelFactory.getInstance(requireActivity())
     }
 
+    private fun setupAction() {
+        binding.apply {
+            btnRegisterHere.setOnClickListener {
+                startActivity(Intent(requireActivity(), RegisterActivity::class.java))
+            }
+        }
+    }
+
+    private fun checkUserStatus() {
+        auth = Firebase.auth
+        currentUser = auth?.currentUser
+        viewModel.getSession().observe(viewLifecycleOwner) {
+            token = it.token
+            if (!it.isLogin && currentUser == null) {
+                setupView(false)
+            } else {
+                setupView(true)
+                getPriceList(token)
+            }
+        }
+    }
+
+
+    private fun getPriceList(token: String) {
+        viewModel.getMarketList(token)
+    }
+
+    private fun setupView(state: Boolean) {
+        if (state) {
+            binding.apply {
+                whitespace.visibility = View.GONE
+                tvNotLogin.visibility = View.GONE
+                btnRegisterHere.visibility = View.GONE
+
+                rvMarketplace.visibility = View.VISIBLE
+            }
+        } else {
+            binding.apply {
+                whitespace.visibility = View.VISIBLE
+                tvNotLogin.visibility = View.VISIBLE
+                btnRegisterHere.visibility = View.VISIBLE
+
+                rvMarketplace.visibility = View.GONE
+            }
+        }
+    }
+
     private fun setupAdapter() {
         marketAdapter = ListMarketAdapter()
         binding.rvMarketplace.apply {
@@ -97,34 +156,41 @@ class MarketplaceFragment : Fragment() {
         activity?.applicationContext?.let { Places.initialize(it, BuildConfig.GCP_KEY) }
         placesClient = Places.createClient(requireActivity())
 
-
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
     }
 
     private val callback = OnMapReadyCallback { googleMap ->
-        map = googleMap
-        map?.uiSettings?.apply {
+        gMap = googleMap
+        gMap?.uiSettings?.apply {
             isRotateGesturesEnabled = true
             isZoomControlsEnabled = true
             isIndoorLevelPickerEnabled = true
             isCompassEnabled = true
             isMapToolbarEnabled = true
         }
-        map!!.animateCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM))
+        gMap!!.animateCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, DEFAULT_ZOOM))
+    }
+
+    private fun showLoading() {
+        viewModel.showLoading.observe(viewLifecycleOwner) {
+            binding.pbMarket.visibility = if (it) View.VISIBLE else View.GONE
+        }
     }
 
     private fun setupList() {
-//        viewModel.list.observe(requireActivity()) {
-//            it?.listStory?.forEach { list ->
-//                gMap!!.addMarker(
-//                    MarkerOptions()
-//                        .position(LatLng(list.lat, list.lon))
-//                        .title("Toko : ${list.name}")
-//                        .snippet("ID : ${list.id}")
-//                )
-//            }
-//        }
+        viewModel.list.observe(viewLifecycleOwner) {
+            showLoading()
+            marketAdapter.submitList(it.market)
+            it?.market?.forEach { market ->
+                gMap?.addMarker(
+                    MarkerOptions()
+                        .position(LatLng(market.lat, market.long))
+                        .title(context?.getString(R.string.market) + market.name)
+                        .snippet(context?.getString(R.string.address) + market.address)
+                )
+            }
+        }
     }
 
     private fun getLocationPermission() {
@@ -156,16 +222,16 @@ class MarketplaceFragment : Fragment() {
         }
 
     private fun updateLocationUI() {
-        if (map == null) {
+        if (gMap == null) {
             return
         }
         try {
             if (locationPermissionGranted) {
-                map?.isMyLocationEnabled = true
-                map?.uiSettings?.isMyLocationButtonEnabled = true
+                gMap?.isMyLocationEnabled = true
+                gMap?.uiSettings?.isMyLocationButtonEnabled = true
             } else {
-                map?.isMyLocationEnabled = false
-                map?.uiSettings?.isMyLocationButtonEnabled = false
+                gMap?.isMyLocationEnabled = false
+                gMap?.uiSettings?.isMyLocationButtonEnabled = false
                 lastKnownLocation = null
                 getLocationPermission()
             }
@@ -182,7 +248,7 @@ class MarketplaceFragment : Fragment() {
                     if (task.isSuccessful) {
                         lastKnownLocation = task.result
                         if (lastKnownLocation != null) {
-                            map?.moveCamera(
+                            gMap?.moveCamera(
                                 CameraUpdateFactory.newLatLngZoom(
                                     LatLng(
                                         lastKnownLocation!!.latitude,
@@ -194,11 +260,11 @@ class MarketplaceFragment : Fragment() {
                     } else {
                         Log.d(TAG, "Current location is null. Using defaults.")
                         Log.e(TAG, "Exception: %s", task.exception)
-                        map?.moveCamera(
+                        gMap?.moveCamera(
                             CameraUpdateFactory
                                 .newLatLngZoom(defaultLocation, DEFAULT_ZOOM)
                         )
-                        map?.uiSettings?.isMyLocationButtonEnabled = false
+                        gMap?.uiSettings?.isMyLocationButtonEnabled = false
                     }
                 }
             }
@@ -215,7 +281,7 @@ class MarketplaceFragment : Fragment() {
     companion object {
         private val TAG = MarketplaceFragment::class.java.simpleName
 
-        private const val DEFAULT_ZOOM = 15f
+        const val DEFAULT_ZOOM = 15f
 
         private const val KEY_CAMERA_POSITION = "camera_position"
         private const val KEY_LOCATION = "location"

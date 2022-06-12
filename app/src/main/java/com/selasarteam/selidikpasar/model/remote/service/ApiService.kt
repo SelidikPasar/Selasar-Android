@@ -1,5 +1,6 @@
 package com.selasarteam.selidikpasar.model.remote.service
 
+import com.selasarteam.selidikpasar.model.remote.response.MarketResponse
 import com.selasarteam.selidikpasar.model.remote.response.NewsResponse
 import com.selasarteam.selidikpasar.model.remote.response.UserResponse
 import retrofit2.Call
@@ -10,10 +11,10 @@ interface ApiService {
     suspend fun getSummaryNews(
     ): NewsResponse
 
-    @GET("price")
-    suspend fun getPriceList(
+    @GET("market")
+    fun getMarketList(
         @Header("Authorization") token: String
-    ): NewsResponse
+    ): Call<MarketResponse>
 
     @FormUrlEncoded
     @POST("register")

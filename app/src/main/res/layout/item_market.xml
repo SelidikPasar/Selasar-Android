@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="12dp"
-    android:layout_marginVertical="8dp">
+    android:layout_marginVertical="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -23,12 +23,12 @@
         <TextView
             android:id="@+id/tv_title_item"
             style="@style/TextStyle.HEADER"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toTopOf="@id/tv_address_item"
             app:layout_constraintStart_toEndOf="@id/iv_photo"
             app:layout_constraintTop_toTopOf="@id/iv_photo"
             tools:text="@string/title" />
@@ -38,10 +38,11 @@
             style="@style/TextStyle.SUBHEADER"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
+            android:layout_marginVertical="4dp"
             android:layout_marginEnd="8dp"
             android:maxLines="2"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@id/tv_title_item"
             app:layout_constraintTop_toBottomOf="@id/tv_title_item"
             tools:text="@string/price" />
