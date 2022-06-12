@@ -47,8 +47,8 @@ class NewsFragment : Fragment() {
 
         binding.rvNews.apply {
             layoutManager = LinearLayoutManager(context)
-            setHasFixedSize(true)
             adapter = newsAdapter
+            setHasFixedSize(true)
         }
     }
 

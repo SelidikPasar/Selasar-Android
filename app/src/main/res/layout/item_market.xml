@@ -12,7 +12,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_photo"
+            android:id="@id/iv_photo"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:contentDescription="@string/photo"
@@ -34,7 +34,7 @@
             tools:text="@string/title" />
 
         <TextView
-            android:id="@+id/tv_market_item"
+            android:id="@+id/tv_address_item"
             style="@style/TextStyle.SUBHEADER"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

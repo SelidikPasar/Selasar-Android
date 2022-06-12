@@ -4,13 +4,19 @@ import androidx.annotation.NonNull;
 import androidx.room.DatabaseConfiguration;
 import androidx.room.InvalidationTracker;
 import androidx.room.RoomOpenHelper;
+import androidx.room.RoomOpenHelper.Delegate;
+import androidx.room.RoomOpenHelper.ValidationResult;
 import androidx.room.migration.AutoMigrationSpec;
 import androidx.room.migration.Migration;
 import androidx.room.util.DBUtil;
 import androidx.room.util.TableInfo;
+import androidx.room.util.TableInfo.Column;
+import androidx.room.util.TableInfo.ForeignKey;
+import androidx.room.util.TableInfo.Index;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
-
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
+import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -90,7 +96,7 @@ public final class NewsDatabase_Impl extends NewsDatabase {
         final TableInfo _infoNews = new TableInfo("news", _columnsNews, _foreignKeysNews, _indicesNews);
         final TableInfo _existingNews = TableInfo.read(_db, "news");
         if (! _infoNews.equals(_existingNews)) {
-          return new RoomOpenHelper.ValidationResult(false, "news(com.selasarteam.selidikpasar.data.local.entity.NewsEntity).\n"
+          return new RoomOpenHelper.ValidationResult(false, "news(com.selasarteam.selidikpasar.model.local.entity.NewsEntity).\n"
                   + " Expected:\n" + _infoNews + "\n"
                   + " Found:\n" + _existingNews);
         }

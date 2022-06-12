@@ -55,8 +55,7 @@ dependencies {
     implementation "com.github.kirich1409:viewbindingpropertydelegate:1.5.3"
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
-    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+
 
     // Navigation
     def navigation_version = "2.4.2"
@@ -87,8 +86,10 @@ dependencies {
     implementation "androidx.datastore:datastore-preferences-rxjava2:${ds_version}"
     implementation "androidx.datastore:datastore-preferences-rxjava3:${ds_version}"
 
-    // Google Maps
-    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+    // Google Maps & Firebase
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
+    implementation 'com.google.android.gms:play-services-auth:20.2.0'
+    implementation 'com.google.android.libraries.places:places:2.6.0'
 
     // Paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
