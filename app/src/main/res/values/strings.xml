@@ -106,5 +106,4 @@
     <string name="name_length">Name can\'t be less than 3 character!</string>
     <string name="address">"Address : "</string>
     <string name="market">"Market : "</string>
-    <string name="no_data">No data to be shown</string>
 </resources>
