@@ -179,7 +179,7 @@ class MarketplaceFragment : Fragment() {
     }
 
     private fun setupList() {
-        viewModel.list.observe(viewLifecycleOwner) {
+        viewModel.listMarket.observe(viewLifecycleOwner) {
             showLoading()
             marketAdapter.submitList(it.market)
             it?.market?.forEach { market ->

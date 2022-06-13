@@ -9,12 +9,18 @@ import com.selasarteam.selidikpasar.model.remote.response.MarketResponse
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val repo: MainRepository) : ViewModel() {
-    val list: LiveData<MarketResponse> = repo.list
+    val listMarket: LiveData<MarketResponse> = repo.listMarket
     val showLoading: LiveData<Boolean> = repo.showLoading
 
     fun getMarketList(token: String) {
         viewModelScope.launch {
             repo.getMarketList(token)
+        }
+    }
+
+    fun getPriceList() {
+        viewModelScope.launch {
+            repo.getPriceList()
         }
     }
 

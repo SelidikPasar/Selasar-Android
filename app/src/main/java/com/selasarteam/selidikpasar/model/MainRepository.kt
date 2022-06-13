@@ -7,6 +7,7 @@ import com.selasarteam.selidikpasar.model.local.datastore.SessionPreferences
 import com.selasarteam.selidikpasar.model.local.entity.NewsEntity
 import com.selasarteam.selidikpasar.model.local.room.NewsDao
 import com.selasarteam.selidikpasar.model.remote.response.MarketResponse
+import com.selasarteam.selidikpasar.model.remote.response.PriceResponse
 import com.selasarteam.selidikpasar.model.remote.response.UserResponse
 import com.selasarteam.selidikpasar.model.remote.service.ApiService
 import com.selasarteam.selidikpasar.utils.Event
@@ -20,8 +21,11 @@ class MainRepository private constructor(
     private val preferences: SessionPreferences,
     private val apiService: ApiService
 ) {
-    private val _list = MutableLiveData<MarketResponse>()
-    val list: LiveData<MarketResponse> = _list
+    private val _listMarket = MutableLiveData<MarketResponse>()
+    val listMarket: LiveData<MarketResponse> = _listMarket
+
+    private val _listPrice = MutableLiveData<PriceResponse>()
+    val listPrice: LiveData<PriceResponse> = _listPrice
 
     private val _registerResponse = MutableLiveData<UserResponse>()
     val registerResponse: LiveData<UserResponse> = _registerResponse
@@ -135,7 +139,7 @@ class MainRepository private constructor(
 
                 _showLoading.value = false
                 if (response.isSuccessful) {
-                    _list.value = responseBody
+                    _listMarket.value = responseBody
                 } else {
                     _showMessage.value = Event(response.message().toString())
                     Log.e(TAG, "onFailure: ${response.message()}")
@@ -143,6 +147,34 @@ class MainRepository private constructor(
             }
 
             override fun onFailure(call: Call<MarketResponse>, t: Throwable) {
+                _showLoading.value = false
+                _showMessage.value = Event(t.message.toString())
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    fun getPriceList() {
+        _showLoading.value = true
+        val client = apiService.getPriceList()
+
+        client.enqueue(object : Callback<PriceResponse> {
+            override fun onResponse(
+                call: Call<PriceResponse>,
+                response: Response<PriceResponse>
+            ) {
+                val responseBody = response.body()
+
+                _showLoading.value = false
+                if (response.isSuccessful) {
+                    _listPrice.value = responseBody
+                } else {
+                    _showMessage.value = Event(response.message().toString())
+                    Log.e(TAG, "onFailure: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<PriceResponse>, t: Throwable) {
                 _showLoading.value = false
                 _showMessage.value = Event(t.message.toString())
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
