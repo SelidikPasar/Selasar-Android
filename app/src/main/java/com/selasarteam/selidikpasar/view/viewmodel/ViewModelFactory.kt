@@ -10,6 +10,9 @@ class ViewModelFactory(private val repo: MainRepository) : ViewModelProvider.New
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return when {
+            modelClass.isAssignableFrom(DetailPriceViewModel::class.java) -> {
+                DetailPriceViewModel(repo) as T
+            }
             modelClass.isAssignableFrom(MainViewModel::class.java) -> {
                 MainViewModel(repo) as T
             }

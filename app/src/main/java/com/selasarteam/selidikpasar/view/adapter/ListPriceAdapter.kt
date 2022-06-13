@@ -31,8 +31,9 @@ class ListPriceAdapter : RecyclerView.Adapter<ListPriceAdapter.ViewHolder>() {
             with(binding) {
                 binding.tvRegion.text = item.region
 
-                rvData.layoutManager = LinearLayoutManager(itemView.context)
                 val itemAdapter = ListPriceDetailAdapter()
+                rvData.layoutManager = LinearLayoutManager(itemView.context)
+                rvData.adapter = itemAdapter
 
                 for (commodity in item.commodity) {
                     if (commodity.name == filter) {
