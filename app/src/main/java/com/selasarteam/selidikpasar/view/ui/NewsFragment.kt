@@ -65,12 +65,17 @@ class NewsFragment : Fragment() {
                         newsAdapter?.submitList(newsData)
                     }
                     is Result.Error -> {
-                        binding.pbNews.visibility = View.GONE
-                        Toast.makeText(
-                            context,
-                            getString(R.string.error_response) + result.error,
-                            Toast.LENGTH_LONG
-                        ).show()
+                        binding.apply {
+                            pbNews.visibility = View.GONE
+                            rvNews.visibility = View.GONE
+                            tvNoData.visibility = View.VISIBLE
+                            ivNoData.visibility = View.VISIBLE
+                            Toast.makeText(
+                                context,
+                                getString(R.string.error_response) + result.error,
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
                     }
                 }
             }

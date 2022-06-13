@@ -38,45 +38,45 @@
         <item>Sugar</item>
     </string-array>
     <string-array name="rice_array">
-        <item>Beras Kualitas Bawah I (kg)</item>
-        <item>Beras Kualitas Bawah II (kg)</item>
-        <item>Beras Kualitas Medium I (kg)</item>
-        <item>Beras Kualitas Medium II (kg)</item>
-        <item>Beras Kualitas Super I (kg)</item>
-        <item>Beras Kualitas Super II (kg)</item>
+        <item>Rice Low Quality I (kg)</item>
+        <item>Rice Low Quality II (kg)</item>
+        <item>Rice Medium Quality I (kg)</item>
+        <item>Rice Medium Quality II (kg)</item>
+        <item>Rice Super Quality I (kg)</item>
+        <item>Rice Super Quality II (kg)</item>
     </string-array>
     <string-array name="chicken_array">
-        <item>Daging Ayam Ras Segar (kg)</item>
+        <item>Fresh Chicken Meat (kg)</item>
     </string-array>
     <string-array name="beef_array">
-        <item>Daging Sapi Kualitas 1 (kg)</item>
-        <item>Daging Sapi Kualitas 2 (kg)</item>
+        <item>Beef Quality I (kg)</item>
+        <item>Beef Quality II (kg)</item>
     </string-array>
     <string-array name="egg_array">
-        <item>Telur Ayam Ras Segar (kg)</item>
+        <item>Fresh Chicken Egg (kg)</item>
     </string-array>
     <string-array name="shallot_array">
-        <item>Bawang Merah Ukuran Sedang (kg)</item>
+        <item>Medium Size Shallot (kg)</item>
     </string-array>
     <string-array name="garlic_array">
-        <item>Bawang Putih Ukuran Sedang (kg)</item>
+        <item>Medium Size Garlic (kg)</item>
     </string-array>
     <string-array name="red_chilli_array">
-        <item>Cabai Merah Besar (kg)</item>
-        <item>Cabai Merah Keriting  (kg)</item>
+        <item>Big Red Chilli (kg)</item>
+        <item>Curly Red Chilli (kg)</item>
     </string-array>
     <string-array name="cayanne_pepper_array">
-        <item>Cabai Rawit Hijau (kg)</item>
-        <item>Cabai Rawit Merah (kg)</item>
+        <item>Green Cayanne Pepper (kg)</item>
+        <item>Red Cayanne Pepper (kg)</item>
     </string-array>
     <string-array name="cooking_oil_array">
-        <item>Minyak Goreng Curah (kg)</item>
-        <item>Minyak Goreng Kemasan Bermerk 1 (kg)</item>
-        <item>Minyak Goreng Kemasan Bermerk 2 (kg)</item>
+        <item>Bulk Cooking Oil (kg)</item>
+        <item>Branded Packaged Cooking Oil I (kg)</item>
+        <item>Branded Packaged Cooking Oil II (kg)</item>
     </string-array>
     <string-array name="sugar_array">
-        <item>Gula Pasir Kualitas Premium (kg)</item>
-        <item>Gula Pasir Lokal (kg)</item>
+        <item>Sugar Premium Quality (kg)</item>
+        <item>Local Sugar (kg)</item>
     </string-array>
     <string name="more">More</string>
     <string name="header" translatable="false">SELASAR</string>
@@ -106,4 +106,5 @@
     <string name="name_length">Name can\'t be less than 3 character!</string>
     <string name="address">"Address : "</string>
     <string name="market">"Market : "</string>
+    <string name="no_data">No data to be shown</string>
 </resources>

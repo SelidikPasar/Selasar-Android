@@ -104,4 +104,5 @@
     <string name="sugar">Gula</string>
     <string name="address">"Alamat : "</string>
     <string name="market">"Toko : "</string>
+    <string name="no_data">Tidak ada data yang ditampilkan</string>
 </resources>
