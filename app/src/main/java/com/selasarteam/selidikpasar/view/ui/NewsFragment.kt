@@ -68,7 +68,6 @@ class NewsFragment : Fragment() {
                         binding.apply {
                             pbNews.visibility = View.GONE
                             rvNews.visibility = View.GONE
-                            tvNoData.visibility = View.VISIBLE
                             ivNoData.visibility = View.VISIBLE
                             Toast.makeText(
                                 context,
