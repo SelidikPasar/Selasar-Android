@@ -73,9 +73,9 @@ class DetailPriceActivity : AppCompatActivity() {
             val localizedContext = this.createConfigurationContext(Configuration(this.resources.configuration).also {
                 it.setLocale(Locale("in"))
             })
+            priceAdapter.setFilter(localizedContext.resources.getStringArray(subfilters)[position])
             viewModel.getPriceList()
             viewModel.listPrice.observe(this) {
-                priceAdapter.setFilter(localizedContext.resources.getStringArray(subfilters)[position])
                 priceAdapter.setList(it.regionalPrices)
             }
         }
