@@ -3,11 +3,12 @@ package com.selasarteam.selidikpasar.view.ui
 import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.ActivityDetailPriceBinding
+import com.selasarteam.selidikpasar.view.adapter.ListPriceAdapter
 import com.selasarteam.selidikpasar.view.viewmodel.DetailPriceViewModel
 import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 import java.util.*
@@ -38,10 +39,17 @@ class DetailPriceActivity : AppCompatActivity() {
 
         binding.detailPrice.setText(filters)
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, resources.getStringArray(R.array.Ingredients))
-        binding.detailPrice.setAdapter(adapter)
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, resources.getStringArray(R.array.Ingredients))
+        binding.detailPrice.setAdapter(arrayAdapter)
 
         initializeSubFilters(subfilters)
+
+        val priceAdapter = ListPriceAdapter()
+        with(binding.rvPrice)  {
+            layoutManager = LinearLayoutManager(this@DetailPriceActivity)
+            setHasFixedSize(true)
+            adapter = priceAdapter
+        }
 
         binding.detailPrice.setOnItemClickListener { _, _, position, _ ->
             val newSubfilters = when(position) {
@@ -65,7 +73,11 @@ class DetailPriceActivity : AppCompatActivity() {
             val localizedContext = this.createConfigurationContext(Configuration(this.resources.configuration).also {
                 it.setLocale(Locale("in"))
             })
-
+            viewModel.getPriceList()
+            viewModel.listPrice.observe(this) {
+                priceAdapter.setFilter(localizedContext.resources.getStringArray(subfilters)[position])
+                priceAdapter.setList(it.regionalPrices)
+            }
         }
     }
 
