@@ -87,7 +87,7 @@ class LoginActivity : AppCompatActivity() {
                 showLoading()
                 postLogin()
                 showMessage()
-                viewModel.login()
+                setupSession()
                 moveActivity()
             }
         }
@@ -105,18 +105,6 @@ class LoginActivity : AppCompatActivity() {
                 edtEmail.text.toString(),
                 edtPassword.text.toString()
             )
-
-            viewModel.loginResponse.observe(this@LoginActivity) {
-                saveSession(
-                    SessionModel(
-                        it.loginResult?.name.toString(),
-                        it.loginResult?.email.toString(),
-                        "",
-                        AUTH_KEY + it.loginResult?.token.toString(),
-                        true
-                    )
-                )
-            }
         }
     }
 
@@ -126,6 +114,22 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(
                     this@LoginActivity, toastText, Toast.LENGTH_SHORT
                 ).show()
+            }
+        }
+    }
+
+    private fun setupSession() {
+        viewModel.loginResponse.observe(this@LoginActivity) {
+            if (!it.error) {
+                saveSession(
+                    SessionModel(
+                        it.loginResult?.name.toString(),
+                        it.loginResult?.email.toString(),
+                        "",
+                        AUTH_KEY + it.loginResult?.token.toString(),
+                        true
+                    )
+                )
             }
         }
     }

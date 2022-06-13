@@ -14,6 +14,7 @@ class MorePriceActivity : AppCompatActivity() {
         setupView()
         ingredientsDetail()
     }
+
     private fun setupView() {
         binding = ActivityMorePriceBinding.inflate(layoutInflater)
         setContentView(binding.root)

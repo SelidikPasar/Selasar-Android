@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/price_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:layoutDescription="@xml/fragment_price_scene"
     tools:context=".view.ui.PriceFragment">
 
     <ImageView
@@ -12,45 +12,45 @@
         android:layout_width="420dp"
         android:layout_height="250dp"
         android:contentDescription="@string/highlight"
+        android:src="@drawable/ic_under_construction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iv_highlight_2"
         android:layout_width="320dp"
         android:layout_height="220dp"
         android:contentDescription="@string/highlight"
+        android:src="@drawable/ic_under_construction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iv_highlight_3"
         android:layout_width="320dp"
         android:layout_height="220dp"
         android:contentDescription="@string/highlight"
+        android:src="@drawable/ic_under_construction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/iv_highlight_4"
         android:layout_width="320dp"
         android:layout_height="220dp"
         android:contentDescription="@string/highlight"
+        android:src="@drawable/ic_under_construction"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:src="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_1"
@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/iv_highlight_1"
         app:srcCompat="@drawable/ic_circle_blank"
-        app:tint="@color/md_theme_dark_primary" />
+        app:tint="?attr/colorPrimary" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_2"
@@ -74,7 +74,7 @@
         app:layout_constraintStart_toEndOf="@id/ic_highlight_1"
         app:layout_constraintTop_toTopOf="@id/ic_highlight_1"
         app:srcCompat="@drawable/ic_circle_blank"
-        app:tint="@color/md_theme_dark_primary" />
+        app:tint="?attr/colorPrimary" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_3"
@@ -85,7 +85,7 @@
         app:layout_constraintStart_toEndOf="@id/ic_highlight_2"
         app:layout_constraintTop_toTopOf="@+id/ic_highlight_2"
         app:srcCompat="@drawable/ic_circle_blank"
-        app:tint="@color/md_theme_dark_primary" />
+        app:tint="?attr/colorPrimary" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/ic_highlight_4"
@@ -97,7 +97,7 @@
         app:layout_constraintStart_toEndOf="@id/ic_highlight_3"
         app:layout_constraintTop_toTopOf="@id/ic_highlight_3"
         app:srcCompat="@drawable/ic_circle_blank"
-        app:tint="@color/md_theme_dark_primary" />
+        app:tint="?attr/colorPrimary" />
 
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/ib_rice"
@@ -275,6 +275,7 @@
         app:layout_constraintTop_toBottomOf="@id/ib_more" />
 
     <TextView
+        android:id="@+id/textView2"
         style="@style/TextStyle.DESCRIPTION"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -284,4 +285,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/iv_highlight_1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

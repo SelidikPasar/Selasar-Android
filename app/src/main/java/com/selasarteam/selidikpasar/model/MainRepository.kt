@@ -158,10 +158,6 @@ class MainRepository private constructor(
         preferences.saveSession(session)
     }
 
-    suspend fun login() {
-        preferences.login()
-    }
-
     suspend fun logout() {
         preferences.logout()
     }

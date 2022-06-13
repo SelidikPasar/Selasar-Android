@@ -33,38 +33,43 @@ class PriceFragment : Fragment() {
         factory = ViewModelFactory.getInstance(requireContext())
     }
 
-    private fun setupMore(){
-        binding.ibChicken.setOnClickListener{
+    private fun setupMore() {
+        binding.ibRice.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibBeef.setOnClickListener{
+        binding.ibChicken.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibEgg.setOnClickListener{
+        binding.ibBeef.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibShallot.setOnClickListener{
+        binding.ibEgg.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibGarlic.setOnClickListener{
+        binding.ibShallot.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibRedChilli.setOnClickListener{
+        binding.ibGarlic.setOnClickListener {
             val intent = Intent(activity, DetailPriceActivity::class.java)
             activity?.startActivity(intent)
         }
 
-        binding.ibMore.setOnClickListener{
+        binding.ibRedChilli.setOnClickListener {
+            val intent = Intent(activity, DetailPriceActivity::class.java)
+            activity?.startActivity(intent)
+        }
+
+        binding.ibMore.setOnClickListener {
             val intent = Intent(activity, MorePriceActivity::class.java)
             activity?.startActivity(intent)
 

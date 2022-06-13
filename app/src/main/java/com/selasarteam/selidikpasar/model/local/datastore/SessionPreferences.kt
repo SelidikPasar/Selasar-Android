@@ -32,12 +32,6 @@ class SessionPreferences private constructor(private val dataStore: DataStore<Pr
         }
     }
 
-    suspend fun login() {
-        dataStore.edit { preferences ->
-            preferences[STATE_KEY] = true
-        }
-    }
-
     suspend fun logout() {
         dataStore.edit { preferences ->
             preferences.clear()

@@ -25,10 +25,4 @@ class LoginViewModel(private val repo: MainRepository) : ViewModel() {
             repo.saveSession(session)
         }
     }
-
-    fun login() {
-        viewModelScope.launch {
-            repo.login()
-        }
-    }
 }

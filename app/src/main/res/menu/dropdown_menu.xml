@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/dropdown_rice"
+        android:title="@string/rice"/>
+    <item
+        android:id="@+id/dropdown_chicken"
+        android:title="@string/chicken"/>
+    <item
+        android:id="@+id/dropdown_beef"
+        android:title="@string/beef"/>
+
+    <item
+        android:id="@+id/dropdown_egg"
+        android:title="@string/egg"/>
+
+    <item
+        android:id="@+id/dropdown_shallot"
+        android:title="@string/shallot"/>
+
+    <item
+        android:id="@+id/dropdown_garlic"
+        android:title="@string/garlic"/>
+
+    <item
+        android:id="@+id/dropdown_chilli"
+        android:title="@string/red_chilli"/>
+
+    <item
+        android:id="@+id/dropdown_cayenne"
+        android:title="@string/cayenne_pepper"/>
+
+    <item
+        android:id="@+id/dropdown_oil"
+        android:title="@string/cooking_oil"/>
+
+    <item
+        android:id="@+id/dropdown_sugar"
+        android:title="@string/sugar"/>
+
+</menu>
