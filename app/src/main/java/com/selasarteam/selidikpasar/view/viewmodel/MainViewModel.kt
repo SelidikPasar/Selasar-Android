@@ -18,12 +18,6 @@ class MainViewModel(private val repo: MainRepository) : ViewModel() {
         }
     }
 
-    fun getPriceList() {
-        viewModelScope.launch {
-            repo.getPriceList()
-        }
-    }
-
     fun getSession(): LiveData<SessionModel> {
         return repo.getSession()
     }

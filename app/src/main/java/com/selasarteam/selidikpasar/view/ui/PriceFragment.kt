@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.FragmentPriceBinding
 import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
 
@@ -35,38 +36,45 @@ class PriceFragment : Fragment() {
 
     private fun setupMore() {
         binding.ibRice.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.rice)
+            })
         }
 
         binding.ibChicken.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.chicken)
+            })
         }
 
         binding.ibBeef.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.beef)
+            })
         }
 
         binding.ibEgg.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.egg)
+            })
         }
 
         binding.ibShallot.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.shallot)
+            })
         }
 
         binding.ibGarlic.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.garlic)
+            })
         }
 
         binding.ibRedChilli.setOnClickListener {
-            val intent = Intent(activity, DetailPriceActivity::class.java)
-            activity?.startActivity(intent)
+            activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.red_chilli)
+            })
         }
 
         binding.ibMore.setOnClickListener {

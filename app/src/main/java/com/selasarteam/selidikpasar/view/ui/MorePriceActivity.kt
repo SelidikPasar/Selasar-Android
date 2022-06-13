@@ -3,6 +3,7 @@ package com.selasarteam.selidikpasar.view.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.ActivityMorePriceBinding
 
 class MorePriceActivity : AppCompatActivity() {
@@ -22,53 +23,63 @@ class MorePriceActivity : AppCompatActivity() {
 
     private fun ingredientsDetail() {
         binding.tbRice.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.rice)
+            })
         }
 
         binding.tbChicken.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.chicken)
+            })
         }
 
         binding.tbBeef.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.beef)
+            })
         }
 
         binding.tbEgg.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.egg)
+            })
         }
 
         binding.tbShallot.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.shallot)
+            })
         }
 
         binding.tbGarlic.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.garlic)
+            })
         }
 
         binding.tbRedChilli.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.red_chilli)
+            })
         }
 
         binding.tbCayyene.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.cayenne_pepper)
+            })
         }
 
         binding.tbOil.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.cooking_oil)
+            })
         }
 
         binding.tbSugar.setOnClickListener {
-            val intent = Intent(this, DetailPriceActivity::class.java)
-            startActivity(intent)
+            this.startActivity(Intent(this, DetailPriceActivity::class.java).also {
+                it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.sugar)
+            })
         }
     }
 }
