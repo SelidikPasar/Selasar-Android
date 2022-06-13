@@ -87,12 +87,6 @@ class PriceFragment : Fragment() {
         binding.ibMore.setOnClickListener {
             val intent = Intent(activity, MorePriceActivity::class.java)
             activity?.startActivity(intent)
-
-//            childFragmentManager.beginTransaction().apply {
-//                replace(R.id.price_fragment, itemFragment)
-//                commit()
-//            }
-
         }
     }
 
