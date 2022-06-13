@@ -65,9 +65,9 @@
         <item>Big Red Chilli (kg)</item>
         <item>Curly Red Chilli (kg)</item>
     </string-array>
-    <string-array name="cayanne_pepper_array">
-        <item>Green Cayanne Pepper (kg)</item>
-        <item>Red Cayanne Pepper (kg)</item>
+    <string-array name="cayenne_pepper_array">
+        <item>Green Cayenne Pepper (kg)</item>
+        <item>Red Cayenne Pepper (kg)</item>
     </string-array>
     <string-array name="cooking_oil_array">
         <item>Bulk Cooking Oil (kg)</item>

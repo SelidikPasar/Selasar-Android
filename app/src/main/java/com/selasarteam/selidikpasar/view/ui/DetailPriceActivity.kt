@@ -1,13 +1,16 @@
 package com.selasarteam.selidikpasar.view.ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.selasarteam.selidikpasar.R
 import com.selasarteam.selidikpasar.databinding.ActivityDetailPriceBinding
 import com.selasarteam.selidikpasar.view.viewmodel.DetailPriceViewModel
 import com.selasarteam.selidikpasar.view.viewmodel.ViewModelFactory
+import java.util.*
 
 class DetailPriceActivity : AppCompatActivity() {
 
@@ -17,6 +20,7 @@ class DetailPriceActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_ITEM_SELECTED = "extra_item_selected"
+        const val EXTRA_SUB_ITEM_SELECTED = "extra_sub_item_selected"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,15 +34,51 @@ class DetailPriceActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val filters = intent?.getIntExtra(EXTRA_ITEM_SELECTED, R.string.rice) ?: R.string.rice
+        var subfilters = intent?.getIntExtra(EXTRA_SUB_ITEM_SELECTED, R.array.rice_array) ?: R.array.rice_array
 
         binding.detailPrice.setText(filters)
 
-        val listOfArrays = resources.getStringArray(R.array.Ingredients)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, listOfArrays)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, resources.getStringArray(R.array.Ingredients))
         binding.detailPrice.setAdapter(adapter)
+
+        initializeSubFilters(subfilters)
+
+        binding.detailPrice.setOnItemClickListener { _, _, position, _ ->
+            val newSubfilters = when(position) {
+                0 -> R.array.rice_array
+                1 -> R.array.chicken_array
+                2 -> R.array.beef_array
+                3 -> R.array.egg_array
+                4 -> R.array.shallot_array
+                5 -> R.array.garlic_array
+                6 -> R.array.red_chilli_array
+                7 -> R.array.cayenne_pepper_array
+                8 -> R.array.cooking_oil_array
+                9 -> R.array.sugar_array
+                else -> R.array.rice_array
+            }
+            subfilters = newSubfilters
+            initializeSubFilters(newSubfilters)
+        }
+
+        binding.subDetailPrice.setOnItemClickListener { _, _, position, _ ->
+            val localizedContext = this.createConfigurationContext(Configuration(this.resources.configuration).also {
+                it.setLocale(Locale("in"))
+            })
+
+        }
     }
 
     private fun setupViewModel() {
         factory = ViewModelFactory.getInstance(this)
+    }
+
+    private fun initializeSubFilters(resId: Int) {
+        val newAdapter = ArrayAdapter(this,
+            android.R.layout.simple_dropdown_item_1line,
+            resources.getStringArray(resId)
+        )
+        binding.subDetailPrice.setAdapter(newAdapter)
+        binding.subDetailPrice.setText("")
     }
 }

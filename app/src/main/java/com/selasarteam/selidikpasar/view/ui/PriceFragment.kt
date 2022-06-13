@@ -38,42 +38,49 @@ class PriceFragment : Fragment() {
         binding.ibRice.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.rice)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.rice_array)
             })
         }
 
         binding.ibChicken.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.chicken)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.chicken_array)
             })
         }
 
         binding.ibBeef.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.beef)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.beef_array)
             })
         }
 
         binding.ibEgg.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.egg)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.egg_array)
             })
         }
 
         binding.ibShallot.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.shallot)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.shallot_array)
             })
         }
 
         binding.ibGarlic.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.garlic)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.garlic_array)
             })
         }
 
         binding.ibRedChilli.setOnClickListener {
             activity?.startActivity(Intent(activity, DetailPriceActivity::class.java).also {
                 it.putExtra(DetailPriceActivity.EXTRA_ITEM_SELECTED, R.string.red_chilli)
+                it.putExtra(DetailPriceActivity.EXTRA_SUB_ITEM_SELECTED, R.array.red_chilli_array)
             })
         }
 
