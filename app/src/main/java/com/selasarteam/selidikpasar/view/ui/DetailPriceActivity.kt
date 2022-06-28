@@ -94,9 +94,9 @@ class DetailPriceActivity : AppCompatActivity() {
                 })
             priceAdapter.setFilter(localizedContext.resources.getStringArray(subFilters)[position])
             viewModel.getPriceList()
+            showLoading()
             viewModel.listPrice.observe(this) {
-                showLoading()
-                if (it == null) {
+                if (it.regionalPrices.isEmpty()) {
                     showMessage()
                     binding.ivNoData.visibility = View.VISIBLE
                     binding.rvPrice.visibility = View.GONE
