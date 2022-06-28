@@ -62,7 +62,7 @@ class CustomEditText : TextInputEditText {
                     }
                     EMAIL -> {
                         if (!Patterns.EMAIL_ADDRESS.matcher(input).matches()) {
-                            error = context.getString(R.string.email_validation)
+                            setError(context.getString(R.string.email_validation), null)
                             isError = true
                         } else {
                             isError = false

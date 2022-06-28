@@ -2,7 +2,9 @@ package com.selasarteam.selidikpasar.view.ui
 
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -17,6 +19,7 @@ class DetailPriceActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailPriceBinding
     private lateinit var factory: ViewModelFactory
+    private lateinit var priceAdapter: ListPriceAdapter
     private val viewModel: DetailPriceViewModel by viewModels { factory }
 
     companion object {
@@ -28,6 +31,8 @@ class DetailPriceActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setupView()
         setupViewModel()
+        setupAdapter()
+        setupAction()
     }
 
     private fun setupView() {
@@ -35,24 +40,37 @@ class DetailPriceActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val filters = intent?.getIntExtra(EXTRA_ITEM_SELECTED, R.string.rice) ?: R.string.rice
-        var subfilters = intent?.getIntExtra(EXTRA_SUB_ITEM_SELECTED, R.array.rice_array) ?: R.array.rice_array
-
         binding.detailPrice.setText(filters)
 
-        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, resources.getStringArray(R.array.Ingredients))
+        val arrayAdapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_dropdown_item_1line,
+            resources.getStringArray(R.array.Ingredients)
+        )
         binding.detailPrice.setAdapter(arrayAdapter)
+    }
 
-        initializeSubFilters(subfilters)
+    private fun setupViewModel() {
+        factory = ViewModelFactory.getInstance(this)
+    }
 
-        val priceAdapter = ListPriceAdapter()
-        with(binding.rvPrice)  {
+    private fun setupAdapter() {
+        priceAdapter = ListPriceAdapter()
+        with(binding.rvPrice) {
             layoutManager = LinearLayoutManager(this@DetailPriceActivity)
             setHasFixedSize(true)
             adapter = priceAdapter
         }
+    }
+
+    private fun setupAction() {
+        var subFilters =
+            intent?.getIntExtra(EXTRA_SUB_ITEM_SELECTED, R.array.rice_array) ?: R.array.rice_array
+
+        initializeSubFilters(subFilters)
 
         binding.detailPrice.setOnItemClickListener { _, _, position, _ ->
-            val newSubfilters = when(position) {
+            val newSubfilters = when (position) {
                 0 -> R.array.rice_array
                 1 -> R.array.chicken_array
                 2 -> R.array.beef_array
@@ -65,32 +83,53 @@ class DetailPriceActivity : AppCompatActivity() {
                 9 -> R.array.sugar_array
                 else -> R.array.rice_array
             }
-            subfilters = newSubfilters
+            subFilters = newSubfilters
             initializeSubFilters(newSubfilters)
         }
 
         binding.subDetailPrice.setOnItemClickListener { _, _, position, _ ->
-            val localizedContext = this.createConfigurationContext(Configuration(this.resources.configuration).also {
-                it.setLocale(Locale("in"))
-            })
-            priceAdapter.setFilter(localizedContext.resources.getStringArray(subfilters)[position])
+            val localizedContext =
+                this.createConfigurationContext(Configuration(this.resources.configuration).also {
+                    it.setLocale(Locale("in"))
+                })
+            priceAdapter.setFilter(localizedContext.resources.getStringArray(subFilters)[position])
             viewModel.getPriceList()
             viewModel.listPrice.observe(this) {
-                priceAdapter.setList(it.regionalPrices)
+                showLoading()
+                if (it == null) {
+                    showMessage()
+                    binding.ivNoData.visibility = View.VISIBLE
+                    binding.rvPrice.visibility = View.GONE
+                } else {
+                    priceAdapter.setList(it.regionalPrices)
+                }
             }
         }
     }
 
-    private fun setupViewModel() {
-        factory = ViewModelFactory.getInstance(this)
-    }
-
     private fun initializeSubFilters(resId: Int) {
-        val newAdapter = ArrayAdapter(this,
+        val newAdapter = ArrayAdapter(
+            this,
             android.R.layout.simple_dropdown_item_1line,
             resources.getStringArray(resId)
         )
         binding.subDetailPrice.setAdapter(newAdapter)
         binding.subDetailPrice.setText("")
+    }
+
+    private fun showLoading() {
+        viewModel.showLoading.observe(this@DetailPriceActivity) {
+            binding.pbPrice.visibility = if (it) View.VISIBLE else View.GONE
+        }
+    }
+
+    private fun showMessage() {
+        viewModel.showMessage.observe(this@DetailPriceActivity) {
+            it.getContentIfNotHandled()?.let { toastText ->
+                Toast.makeText(
+                    this@DetailPriceActivity, toastText, Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 }

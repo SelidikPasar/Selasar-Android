@@ -49,7 +49,7 @@
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_bookmark.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_change_password.xml" value="0.18" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_detail_news.xml" value="0.30559757942511345" />
-        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_detail_price.xml" value="0.18" />
+        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_detail_price.xml" value="0.22" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_detail_summary.xml" value="0.19641025641025642" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_details_news.xml" value="0.25" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -72,6 +72,7 @@
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_market.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_news.xml" value="0.2" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_price.xml" value="0.18" />
+        <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_price_detail.xml" value="0.18" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/layout/item_summary.xml" value="0.19641025641025642" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/menu/bottom_nav_menu.xml" value="0.18" />
         <entry key="..\:/Informatics/Android/AndroidStudioProjects/Selasar/app/src/main/res/menu/dropdown_menu.xml" value="0.18" />
